@@ -95,7 +95,6 @@ def tag_words_with_ann(words_with_offsets, annotations):
 
 
 if __name__ == "__main__":
-    split_with_start_end_byte("This is 'the' shit's")
     root_dir = '/media/sf_kickstarter/CS224D/Project/database.mpqa.1.2'
     # Pass the directory of the MPQA as a command line argument.
     if len(sys.argv) > 1:
