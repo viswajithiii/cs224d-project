@@ -27,7 +27,7 @@ class Config(object):
     lr = 0.005
     # training_iters = 100000
     # training_epochs = 200 #Hyperparameter used in paper
-    training_epochs = 100
+    training_epochs = 20
     minibatch_sentence_size = 80  # Hyperparameter used in paper
     batch_size = 64
     display_step = 1
@@ -68,7 +68,24 @@ def data_iterator(raw_x, raw_y, batch_size, num_steps, num_classes):
     y is (batch_size*n_steps) x n_classes
     """
 
+    # TODO: Check if this is necessary
+    # Augment our data so that the number of words is an exact multiple
+    # Of batch_size*num_steps
+    total_elems_per_batch = batch_size*num_steps
+
     data_len = len(raw_x)
+    if data_len % total_elems_per_batch != 0:
+        new_len = (data_len // total_elems_per_batch + 1)*total_elems_per_batch
+        raw_x = np.concatenate([raw_x, np.zeros((new_len - data_len,),
+                                                dtype=np.int32)])
+        raw_y = np.concatenate([raw_y, classes_to_int_dict['O'] *
+                                np.ones((new_len - data_len,),
+                                        dtype=np.int32)])
+
+    data_len = new_len
+    assert len(raw_x) == data_len
+    assert len(raw_y) == data_len
+
     num_batches = data_len // batch_size
 
     # We need y as a matrix with one-hot rows instead of a list of indices
@@ -83,7 +100,7 @@ def data_iterator(raw_x, raw_y, batch_size, num_steps, num_classes):
     for i in range(batch_size):
         res_x[i] = raw_x[num_batches * i:num_batches * (i + 1)]
         res_y[i] = mat_y[num_batches*i:num_batches*(i+1), :]
-    epoch_size = (num_batches - 1) // num_steps
+    epoch_size = (num_batches) // num_steps
     if epoch_size == 0:
         raise ValueError("epoch_size == 0, decrease batch_size or num_steps")
     for i in range(epoch_size):
@@ -279,9 +296,10 @@ class BiRNN_Classifier:
                           self.config.num_steps, self.config.num_classes)):
 
             # Fit training using batch data
-            _, curr_loss, curr_istate_fw, curr_istate_bw, acc = sess.run(
+            _, curr_loss, curr_istate_fw, curr_istate_bw, acc, p, y = sess.run(
                 [self.optimizer, self.cost, self.final_fw, self.final_bw,
-                 self.accuracy], feed_dict={
+                 self.accuracy, self.predicted_indices, self.true_indices],
+                feed_dict={
                             self.input_placeholder: x_batch,
                             self.labels_placeholder: y_batch,
                             self.istate_fw: curr_istate_fw,
@@ -289,13 +307,23 @@ class BiRNN_Classifier:
 
             if verbose and (i % verbose == 0 or i >= total_steps - 1):
                 sys.stdout.write(
-                    '\r{} / {} : current training cost = {}, curr_acc = {}'.
+                    '\r{} / {} : Current loss = {}, Current accuracy = {}'.
                     format(i, total_steps, curr_loss, acc))
                 sys.stdout.flush()
+
         if verbose:
             sys.stdout.write('\n')
 
-    def calculate_dev_accuracy(self, sess):
+    def calculate_accuracy(self, sess, data_src='dev'):
+
+        src_to_x_dict = {'train': self.x_train, 'dev': self.x_dev,
+                         'test': self.x_test}
+        src_to_y_dict = {'train': self.y_train, 'dev': self.y_dev,
+                         'test': self.y_test}
+
+        data_x = src_to_x_dict[data_src]
+        data_y = src_to_y_dict[data_src]
+
         # Calculate batch accuracy
         losses = []
         accs = []
@@ -305,13 +333,14 @@ class BiRNN_Classifier:
         curr_istate_bw = np.zeros((self.config.batch_size,
                                    self.config.num_hidden))
 
-        predicted_indices = []
-        true_indices = []
-        for x_batch, y_batch in data_iterator(self.x_dev, self.y_dev,
+        preds = []
+        trues = []
+        xes = []
+        for x_batch, y_batch in data_iterator(data_x, data_y,
                                               self.config.batch_size,
                                               self.config.num_steps,
                                               self.config.num_classes):
-            acc, loss, pred_idxs, y, curr_istate_fw, curr_istate_bw = sess.run(
+            acc, loss, p, y, curr_istate_fw, curr_istate_bw = sess.run(
                 [self.accuracy, self.cost, self.predicted_indices,
                  self.true_indices, self.final_fw,
                     self.final_bw], feed_dict={
@@ -324,17 +353,100 @@ class BiRNN_Classifier:
 
             accs.append(acc)
             losses.append(loss)
-            predicted_indices.append(pred_idxs)
-            true_indices.append(y)
-        predicted_indices = np.concatenate(predicted_indices)
-        true_indices = np.concatenate(true_indices)
-        print_confusion(calculate_confusion(self.config, predicted_indices,
-                                            true_indices),
+            xes.append(x_batch)
+            preds.append(p.reshape(x_batch.shape))
+            trues.append(y.reshape(x_batch.shape))
+
+        xes = np.concatenate(xes, 1).reshape((-1, ))
+        preds = np.concatenate(preds, 1).reshape((-1, ))
+        trues = np.concatenate(trues, 1).reshape((-1, ))
+
+        print_confusion(calculate_confusion(self.config, preds,
+                                            trues),
                         int_to_classes_dict)
         loss = sum(losses)/len(losses)
         acc = sum(accs)/len(accs)
-        print "Validation Loss= " + "{:.6f}".format(loss) + \
-              ", Validation Accuracy= " + "{:.5f}".format(acc)
+        print "Validation Loss = " + "{:.6f}".format(loss) + \
+              ", Validation Accuracy = " + "{:.5f}".format(acc)
+
+        return xes, preds, trues
+
+    def compute_overlap_confusion(preds, trues):
+        """
+        Given the true and predicted labels,
+        computes the overlap P/R/F1 as done in the paper.
+        Returns both proportional and binary.
+        """
+        data_len = preds.shape[0]
+        assert trues.shape[0] == data_len
+
+        # State can be None, DSE, ESE depending on whether
+        # we are in a phrase or not.
+        state = None
+
+        curr_window_begin = None
+
+        total_true_windows = 0
+        correct_true_windows = 0  # For binary precision.
+
+        total_true_windows_words = 0
+        correct_true_windows_words = 0.  # For proportional precision.
+
+        # First, we iterate over the predicted labels, and compute
+        # precision.
+        for i in xrange(data_len):
+            if state is None:
+                if preds[i] == classes_to_int_dict['O']:
+                    pass
+                elif preds[i] == classes_to_int_dict['BDSE']:
+                    curr_window_begin = i
+                    state = 'DSE'
+                elif preds[i] == classes_to_int_dict['BESE']:
+                    curr_window_begin = i
+                    state = 'ESE'
+                else:
+                    assert False  # This shouldn't happen.
+
+            elif state == 'DSE':
+
+                # The window has ended. Now we can compute precision.
+                if preds[i] == classes_to_int_dict['O']:
+                    total_true_windows += 1
+                    total_true_windows_words += (i - curr_window_begin)
+                    binary_overlap = False
+                    for j in xrange(curr_window_begin, i):
+                        if int_to_classes_dict[preds[j]].endswith('DSE'):
+                            binary_overlap = True
+                            correct_true_windows_words += 1
+                    if binary_overlap:
+                        correct_true_windows += 1
+                    curr_window_begin = None
+                elif preds[i] == classes_to_int_dict['IDSE']:
+                    pass
+                else:
+                    assert False  # This shouldn't happen.
+
+            elif state == 'ESE':
+                if preds[i] == classes_to_int_dict['O']:
+                    total_true_windows += 1
+                    total_true_windows_words += (i - curr_window_begin)
+                    binary_overlap = False
+                    for j in xrange(curr_window_begin, i):
+                        if int_to_classes_dict[preds[j]].endswith('ESE'):
+                            binary_overlap = True
+                            correct_true_windows_words += 1
+                    if binary_overlap:
+                        correct_true_windows += 1
+                    curr_window_begin = None
+                elif preds[i] == classes_to_int_dict['IESE']:
+                    pass
+                else:
+                    assert False  # This shouldn't happen.
+
+        print 'Total true windows:', total_true_windows
+        print 'Total number of windows with some overlap:', correct_true_windows
+        print 'Total number of words in true windows:', total_true_windows_words
+        print 'Total number of overlapping words:', correct_true_windows_words
 
 
 def run_BiRNN():
@@ -356,10 +468,19 @@ def run_BiRNN():
 
         # Keep training until reach max epochs
         for step in xrange(config.training_epochs):
+            print 'Epoch number:', (step + 1)
             model.run_epoch(sess, verbose)
             if step % config.display_step == 0:
-                model.calculate_dev_accuracy(sess)
+                model.calculate_accuracy(sess)
 
+        for s in ['train', 'dev']:
+            xes, preds, trues = model.calculate_accuracy(sess, s)
+            model.compute_overlap_confusion(xes, preds, trues)
+            with open('outputs_%s.txt' % s, 'w') as out_f:
+                for i in range(len(xes)):
+                    out_f.write(model.vocab.decode(xes[i]) + '\t' +
+                                int_to_classes_dict[preds[i]] +
+                                '\t' + int_to_classes_dict[trues[i]] + '\n')
         print "Optimization Finished!"
 
 if __name__ == "__main__":
