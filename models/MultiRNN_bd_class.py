@@ -4,6 +4,7 @@ from tensorflow.models.rnn import rnn, rnn_cell
 import numpy as np
 import pickle
 import sys
+import time
 
 """
 To classify words in a sentence as part of Direct Subjective Expressions (DSEs),
@@ -31,16 +32,17 @@ class Config(object):
     minibatch_sentence_size = 80  # Hyperparameter used in paper
     batch_size = 64
     display_step = 1
+    model_depth = 5
 
     # Added:
     num_input = 300  # Word vector length
-    num_steps = 40  # Number of timesteps.
+    num_steps = 80  # Number of timesteps.
 
     # n_hidden = 128 # hidden layer num of features
     # n_classes = 10 # MNIST total classes (0-9 digits)
 
     # Added:
-    num_hidden = 100  # Number of hidden states
+    num_hidden = 50  # Number of hidden states
     num_classes = 5  # BDSE, IDSE, BESE, IESE, O -- five classes
 
 classes_to_int_dict = {
@@ -233,9 +235,11 @@ class BiRNN_Classifier:
 
         # Tensorflow LSTM cell requires 2x n_hidden length (state & cell)
         self.istate_fw = tf.placeholder(tf.float32,
-                                        [None, 2*self.config.num_hidden])
+                                        [None, 2 * self.config.model_depth *
+                                         self.config.num_hidden])
         self.istate_bw = tf.placeholder(tf.float32,
-                                        [None, 2*self.config.num_hidden])
+                                        [None, 2 * self.config.model_depth *
+                                         self.config.num_hidden])
 
         # Labels has to be (batch_size*n_steps) x n_classes
         self.labels_placeholder = tf.placeholder(tf.float32,
@@ -280,9 +284,13 @@ class BiRNN_Classifier:
         _X = tf.matmul(_X, _weights['hidden']) + _biases['hidden']
 
         # Forward direction cell
-        rnn_fw_cell = rnn_cell.BasicLSTMCell(self.config.num_hidden)
+        single_fw_cell = rnn_cell.BasicLSTMCell(self.config.num_hidden)
+        rnn_fw_cell = rnn_cell.MultiRNNCell(
+            [single_fw_cell]*self.config.model_depth)
         # Backward direction cell
-        rnn_bw_cell = rnn_cell.BasicLSTMCell(self.config.num_hidden)
+        single_bw_cell = rnn_cell.BasicLSTMCell(self.config.num_hidden)
+        rnn_bw_cell = rnn_cell.MultiRNNCell(
+            [single_bw_cell]*self.config.model_depth)
 
         # Split data because rnn cell needs a list of inputs for the RNN inner
         # loop
@@ -330,10 +338,23 @@ class BiRNN_Classifier:
         self.accuracy = tf.reduce_mean(tf.cast(correct_pred, tf.float32))
 
     # Now, we've made our computational graph.
-    def __init__(self, config):
+    def __init__(self, config, verbose=False):
+        self.verbose = verbose
         self.config = config
+        if self.verbose:
+            print 'Loading data ...'
+            start_time = time.time()
         self.load_data(DEBUG)
+        if self.verbose:
+            end_time = time.time()
+            print 'Loaded data. Took %f seconds.' % (end_time - start_time)
+            print 'Creating computation graph ...'
+            start_time = time.time()
         self.create_computation_graph()
+        if self.verbose:
+            end_time = time.time()
+            print 'Created computation graph. Took %f seconds.' % (
+                end_time - start_time)
 
     def run_epoch(self, sess, verbose=40):
 
@@ -342,10 +363,12 @@ class BiRNN_Classifier:
             self.config.num_steps, self.config.num_classes))
 
         curr_istate_fw = np.zeros((self.config.batch_size,
-                                   2*self.config.num_hidden))
+                                   2 * self.config.model_depth *
+                                   self.config.num_hidden))
 
         curr_istate_bw = np.zeros((self.config.batch_size,
-                                   2*self.config.num_hidden))
+                                   2 * self.config.model_depth *
+                                   self.config.num_hidden))
 
         for (i, (x_batch, y_batch)) in enumerate(
             data_iterator(self.x_train, self.y_train, self.config.batch_size,
@@ -409,10 +432,12 @@ class BiRNN_Classifier:
         losses = []
         accs = []
         curr_istate_fw = np.zeros((self.config.batch_size,
-                                   2*self.config.num_hidden))
+                                   2 * self.config.model_depth *
+                                   self.config.num_hidden))
 
         curr_istate_bw = np.zeros((self.config.batch_size,
-                                   2*self.config.num_hidden))
+                                   2 * self.config.model_depth *
+                                   self.config.num_hidden))
 
         preds = []
         trues = []
@@ -471,7 +496,7 @@ def run_BiRNN():
     # Launch the graph
     config = Config()
 
-    model = BiRNN_Classifier(config)
+    model = BiRNN_Classifier(config, verbose=True)
 
     # Initializing the variables
     init = tf.initialize_all_variables()
@@ -481,12 +506,27 @@ def run_BiRNN():
         sess.run(init)
         verbose = 10
 
+        step = 0
         # Keep training until reach max epochs
-        for step in xrange(config.training_epochs):
+        while step < (config.training_epochs):
             print 'Epoch number:', (step + 1)
             model.run_epoch(sess, verbose)
             if step % config.display_step == 0:
                 model.calculate_accuracy(sess)
+            step += 1
+            if step == config.training_epochs:
+                print 'All epochs done, do you want to do more? (Y/N)'
+                print 'If yes, follow Y with the number of epochs to add.'
+                try:
+                    response = raw_input()
+                    if response[0] == 'Y':
+                        num_steps_to_add = int(response.split()[1])
+                        config.training_epochs += num_steps_to_add
+                        print 'Success. Total epochs set to %d' % (
+                            config.training_epochs)
+                except:
+                    print 'Something went wrong with your input.'
+                    print 'Not training anymore.'
 
         for s in ['train', 'dev']:
             xes, preds, trues = model.calculate_accuracy(sess, s)
