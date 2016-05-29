@@ -13,7 +13,7 @@ it is either at the beginning(B) or the inside (I) of a phrase. So there are
 five classes in total: B_DSE, I_DSE, B_ESE, I_ESE and O.
 """
 
-DEBUG = False
+DEBUG = True 
 
 
 class Config(object):
@@ -28,22 +28,21 @@ class Config(object):
     lr = 0.005
     # training_iters = 100000
     # training_epochs = 200 #Hyperparameter used in paper
-    training_epochs = 40
+    training_epochs = 100
     minibatch_sentence_size = 80  # Hyperparameter used in paper
     batch_size = 16
     display_step = 1
-    model_depth = 5
 
-    # Added:
     num_input = 300  # Word vector length
     num_steps = 400  # Number of timesteps.
 
-    # n_hidden = 128 # hidden layer num of features
-    # n_classes = 10 # MNIST total classes (0-9 digits)
-
-    # Added:
-    num_hidden = 50  # Number of hidden states
     num_classes = 5  # BDSE, IDSE, BESE, IESE, O -- five classes
+
+    def __init__(self, nlayers, nhidden, nsteps):
+        self.model_depth = nlayers
+        self.num_hidden = nhidden
+        self.num_steps = nsteps
+        
 
 classes_to_int_dict = {
         'BDSE': 0,
@@ -489,12 +488,12 @@ class BiRNN_Classifier:
         return xes, preds, trues
 
 
-def run_BiRNN():
+def run_BiRNN(nlayers, nhidden, nsteps):
     """
     Runs the BiRNN on the MPQA dataset.
     """
     # Launch the graph
-    config = Config()
+    config = Config(nlayers, nhidden, nsteps)
 
     model = BiRNN_Classifier(config, verbose=True)
 
@@ -538,4 +537,14 @@ def run_BiRNN():
         print "Optimization Finished!"
 
 if __name__ == "__main__":
-    run_BiRNN()
+    #Extract arguments from call to program
+    nlayers = 2 
+    nhidden = 50
+    nsteps = 80
+    if len(sys.argv) > 1:
+        nlayers = int(sys.argv[1])
+    if len(sys.argv)>2:        
+        nhidden = int(sys.argv[2])
+    if len(sys.argv)>3:
+        nsteps = int(sys.argv[3])
+    run_BiRNN(nlayers, nhidden, nsteps)
