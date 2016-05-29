@@ -42,11 +42,11 @@ import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
-import data_utils
+import utils as data_utils
 from seq2seq_model import OpinExtractSeq2SeqModel
 
 
-tf.app.flags.DEFINE_float("learning_rate", 0.5, "Learning rate.")
+tf.app.flags.DEFINE_float("learning_rate", 0.01, "Learning rate.")
 tf.app.flags.DEFINE_float("learning_rate_decay_factor", 0.99,
                           "Learning rate decays by this much.")
 tf.app.flags.DEFINE_float("max_gradient_norm", 5.0,
@@ -118,13 +118,14 @@ def read_data(file_path, vocab):
   return data_set
 
 
-def create_model(session, forward_only, vocab=None):
+def create_model(session, forward_only, vocab=None, embedding_matrix=None):
   """Create translation model and initialize or load parameters in session."""
   model = OpinExtractSeq2SeqModel(
       vocab, _buckets,
       FLAGS.size, FLAGS.num_layers, FLAGS.max_gradient_norm, FLAGS.batch_size,
       FLAGS.learning_rate, FLAGS.learning_rate_decay_factor,
-      forward_only=forward_only, use_lstm=True)
+      forward_only=forward_only, use_lstm=True,
+      embedding_matrix=embedding_matrix)
   ckpt = tf.train.get_checkpoint_state(FLAGS.train_dir)
   if ckpt and tf.gfile.Exists(ckpt.model_checkpoint_path):
     print("Reading model parameters from %s" % ckpt.model_checkpoint_path)
@@ -139,10 +140,11 @@ def train():
   """Train a en->fr translation model using WMT data."""
 
   vocab = pickle.load(open('data/vocab.pickle', 'r'))
+  em_mat = np.load('data/embedding_matrix.npy')
   with tf.Session() as sess:
     # Create model.
     print("Creating %d layers of %d units." % (FLAGS.num_layers, FLAGS.size))
-    model = create_model(sess, False, vocab)
+    model = create_model(sess, False, vocab, embedding_matrix=em_mat)
 
     # Read data into buckets and compute their sizes.
     print ("Reading development and training data (limit: %d)."
@@ -164,7 +166,7 @@ def train():
     step_time, loss = 0.0, 0.0
     current_step = 0
     previous_losses = []
-    steps_per_val_eval = 10
+    steps_per_val_eval = 20
     while True:
       # Choose a bucket according to data distribution. We pick a random number
       # in [0, 1] and use the corresponding interval in train_buckets_scale.
@@ -194,11 +196,12 @@ def train():
           sess.run(model.learning_rate_decay_op)
         previous_losses.append(loss)
         # Save checkpoint and zero timer and loss.
-        checkpoint_path = os.path.join(FLAGS.train_dir, "translate.ckpt")
-        #model.saver.save(sess, checkpoint_path, global_step=model.global_step)
         step_time, loss = 0.0, 0.0
         # Run evals on development set and print their perplexity.
         if current_step % steps_per_val_eval == 0:
+          checkpoint_path = os.path.join(FLAGS.train_dir, "translate.ckpt")
+          model.saver.save(sess, checkpoint_path, global_step=model.global_step)
+          ppx_total = 0.0
           for bucket_id in xrange(len(_buckets)):
             if len(dev_set[bucket_id]) == 0:
               print("  eval: empty bucket %d" % (bucket_id))
@@ -209,6 +212,9 @@ def train():
                                          target_weights, bucket_id, True)
             eval_ppx = math.exp(eval_loss) if eval_loss < 300 else float('inf')
             print("  eval: bucket %d perplexity %.2f" % (bucket_id, eval_ppx))
+            ppx_total += len(dev_set[bucket_id])*eval_ppx
+          print ("Mean eval perplexity by example: %.2f" % (
+              ppx_total/sum([len(dev_set[i]) for i in range(len(_buckets))])))
           # sys.stdout.flush()
 
 

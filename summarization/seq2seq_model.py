@@ -25,8 +25,12 @@ import numpy as np
 from six.moves import xrange  # pylint: disable=redefined-builtin
 import tensorflow as tf
 
-import data_utils
+import utils as data_utils
 import time
+import seq2seq_custom
+
+import math
+from tensorflow.python.ops import init_ops
 
 
 class OpinExtractSeq2SeqModel(object):
@@ -47,7 +51,8 @@ class OpinExtractSeq2SeqModel(object):
   def __init__(self, vocab, buckets, size,
                num_layers, max_gradient_norm, batch_size, learning_rate,
                learning_rate_decay_factor, use_lstm=False,
-               num_samples=512, forward_only=False, verbose=True):
+               num_samples=512, forward_only=False, verbose=True,
+               embedding_matrix=None):
     """Create the model.
 
     Args:
@@ -108,15 +113,19 @@ class OpinExtractSeq2SeqModel(object):
 
     if self.verbose:
         print (time.ctime(), "Defined LSTM Cell.")
+
+    embedding = tf.Variable(embedding_matrix, dtype=tf.float32)
+
     # The seq2seq function: we use embedding for the input and attention.
     def seq2seq_f(encoder_inputs, decoder_inputs, do_decode):
-      return tf.nn.seq2seq.embedding_attention_seq2seq(
+      return seq2seq_custom.embedding_attention_seq2seq(
           encoder_inputs, decoder_inputs, cell,
           num_encoder_symbols=len(self.vocab),
           num_decoder_symbols=len(self.vocab),
           embedding_size=size,
           output_projection=output_projection,
-          feed_previous=do_decode)
+          feed_previous=do_decode,
+          embedding=embedding)
 
     # Feeds for inputs.
     self.encoder_inputs = []
@@ -166,7 +175,7 @@ class OpinExtractSeq2SeqModel(object):
     if not forward_only:
       self.gradient_norms = []
       self.updates = []
-      opt = tf.train.GradientDescentOptimizer(self.learning_rate)
+      opt = tf.train.AdamOptimizer(self.learning_rate)
       for b in xrange(len(buckets)):
         if self.verbose:
             print (time.ctime(), "Defined gradient for %d." %(b))
@@ -177,6 +186,10 @@ class OpinExtractSeq2SeqModel(object):
         self.gradient_norms.append(norm)
         self.updates.append(opt.apply_gradients(
             zip(clipped_gradients, params), global_step=self.global_step))
+
+    # Summaries
+    embedding_hist = tf.histogram_summary("embedding", embedding)
+
 
     self.saver = tf.train.Saver(tf.all_variables())
 
