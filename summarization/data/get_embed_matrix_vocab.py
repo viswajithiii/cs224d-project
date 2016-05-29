@@ -14,42 +14,42 @@ if __name__ == "__main__":
     for name in ['test', 'train', 'val']:
         filename = name + '_tokens.txt'
         f = open(filename, 'r')
-        for line in f:            
+        for line in f:
             sp_line = line.strip().split()
             for token in sp_line:
                 all_words.add(token)
                 vocab.add_word(token)
         f.close()
-    
-    glove_dir = '/media/sf_cs224d/cs224d-project/glove.840B.300d'
+
+    glove_dir = '/media/sf_kickstarter/CS224D/Project/glove.840B.300d'
     glove_f = open(os.path.join(glove_dir, 'glove.840B.300d.txt'), 'r')
     embedding_matrix = np.zeros((len(vocab.word_to_index),300))
-    
-    
+
+
     count = 0
     for line in glove_f:
         line_sp = line.strip().split()
         word = line_sp[0]
-        line_sp_vec = [float(line_num) for line_num in line_sp[1:]] 
+        line_sp_vec = [float(line_num) for line_num in line_sp[1:]]
         if word in vocab.word_to_index:
-            line_sp_vec = [float(line_num) for line_num in line_sp[1:]] 
+            line_sp_vec = [float(line_num) for line_num in line_sp[1:]]
             index = vocab.word_to_index[word]
             embedding_matrix[index,:] = line_sp_vec
         count += 1
         if count%5000 == 0:
             print "Current word:" , word
             print count
-   
-    
+
+
     np.save('embedding_matrix', embedding_matrix)
     pickle.dump(vocab, open('vocab.pickle','w'))
-             
 
 
 
 
 
-    
+
+
 '''
 with open(full_fname, 'r') as f:
     doc_str = f.read()
