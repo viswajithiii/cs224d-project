@@ -45,6 +45,7 @@ import tensorflow as tf
 
 import utils as data_utils
 from seq2seq_model import OpinExtractSeq2SeqModel
+import nltk
 
 
 tf.app.flags.DEFINE_float("learning_rate", 0.001, "Learning rate.")
@@ -145,7 +146,8 @@ def train():
   with tf.Session() as sess:
     # Create model.
     print("Creating %d layers of %d units." % (FLAGS.num_layers, FLAGS.size))
-    model = create_model(sess, False, vocab, embedding_matrix=em_mat)
+    model = create_model(sess, False, vocab, embedding_matrix=em_mat,
+                         num_samples = 0)
 
     # Read data into buckets and compute their sizes.
     print ("Reading development and training data (limit: %d)."
@@ -238,18 +240,13 @@ def train():
 
 
 def decode():
+  vocab = pickle.load(open('data/vocab.pickle', 'r'))
+  em_mat = np.load('data/embedding_matrix.npy')
+
   with tf.Session() as sess:
     # Create model and load parameters.
-    model = create_model(sess, True)
+    model = create_model(sess, True, vocab, embedding_matrix=em_mat)
     model.batch_size = 1  # We decode one sentence at a time.
-
-    # Load vocabularies.
-    en_vocab_path = os.path.join(FLAGS.data_dir,
-                                 "vocab%d.en" % FLAGS.en_vocab_size)
-    fr_vocab_path = os.path.join(FLAGS.data_dir,
-                                 "vocab%d.fr" % FLAGS.fr_vocab_size)
-    en_vocab, _ = data_utils.initialize_vocabulary(en_vocab_path)
-    _, rev_fr_vocab = data_utils.initialize_vocabulary(fr_vocab_path)
 
     # Decode from standard input.
     sys.stdout.write("> ")
@@ -257,7 +254,7 @@ def decode():
     sentence = sys.stdin.readline()
     while sentence:
       # Get token-ids for the input sentence.
-      token_ids = data_utils.sentence_to_token_ids(tf.compat.as_bytes(sentence), en_vocab)
+      token_ids = [vocab.encode(x) for x in nltk.word_tokenize(sentence)]
       # Which bucket does it belong to?
       bucket_id = min([b for b in xrange(len(_buckets))
                        if _buckets[b][0] > len(token_ids)])
@@ -265,7 +262,7 @@ def decode():
       encoder_inputs, decoder_inputs, target_weights = model.get_batch(
           {bucket_id: [(token_ids, [])]}, bucket_id)
       # Get output logits for the sentence.
-      _, _, output_logits = model.step(sess, encoder_inputs, decoder_inputs,
+      _, _, output_logits, _ = model.step(sess, encoder_inputs, decoder_inputs,
                                        target_weights, bucket_id, True)
       # This is a greedy decoder - outputs are just argmaxes of output_logits.
       outputs = [int(np.argmax(logit, axis=1)) for logit in output_logits]
@@ -273,7 +270,7 @@ def decode():
       if data_utils.EOS_ID in outputs:
         outputs = outputs[:outputs.index(data_utils.EOS_ID)]
       # Print out French sentence corresponding to outputs.
-      print(" ".join([tf.compat.as_str(rev_fr_vocab[output]) for output in outputs]))
+      print(" ".join([vocab.decode(output) for output in outputs]))
       print("> ", end="")
       sys.stdout.flush()
       sentence = sys.stdin.readline()
