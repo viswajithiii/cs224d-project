@@ -48,6 +48,8 @@ from seq2seq_model import OpinExtractSeq2SeqModel
 import nltk
 
 
+tf.app.flags.DEFINE_float("dropout_prob", 0.8,
+                          "Dropout keep prob")
 tf.app.flags.DEFINE_float("learning_rate", 0.001, "Learning rate.")
 tf.app.flags.DEFINE_float("learning_rate_decay_factor", 0.99,
                           "Learning rate decays by this much.")
@@ -129,7 +131,7 @@ def create_model(session, forward_only, vocab=None, embedding_matrix=None):
       FLAGS.size, FLAGS.num_layers, FLAGS.max_gradient_norm, FLAGS.batch_size,
       FLAGS.learning_rate, FLAGS.learning_rate_decay_factor,
       forward_only=forward_only, use_lstm=True,
-      embedding_matrix=embedding_matrix)
+      embedding_matrix=embedding_matrix, dropout_prob=FLAGS.dropout_prob)
   ckpt = tf.train.get_checkpoint_state(FLAGS.train_dir)
   if ckpt and tf.gfile.Exists(ckpt.model_checkpoint_path):
     print("Reading model parameters from %s" % ckpt.model_checkpoint_path)

@@ -51,7 +51,8 @@ class OpinExtractSeq2SeqModel(object):
   def __init__(self, vocab, buckets, size,
                num_layers, max_gradient_norm, batch_size, learning_rate,
                learning_rate_decay_factor, use_lstm=False,
-               num_samples=512, forward_only=False, verbose=True,
+               num_samples=512, dropout_prob = 1.0,
+               forward_only=False, verbose=True,
                embedding_matrix=None):
     """Create the model.
 
@@ -107,6 +108,10 @@ class OpinExtractSeq2SeqModel(object):
     single_cell = tf.nn.rnn_cell.GRUCell(size)
     if use_lstm:
       single_cell = tf.nn.rnn_cell.BasicLSTMCell(size)
+
+    if dropout_prob < 0.99:
+      single_cell = tf.nn.rnn_cell.DropoutWrapper(
+          single_cell, dropout_prob, dropout_prob)
     cell = single_cell
     if num_layers > 1:
       cell = tf.nn.rnn_cell.MultiRNNCell([single_cell] * num_layers)
