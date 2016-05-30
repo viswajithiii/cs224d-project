@@ -2,6 +2,10 @@ from collections import defaultdict
 
 import numpy as np
 
+GO_ID = 1
+PAD_ID = 2
+EOS_ID = 3
+
 class Vocab(object):
   def __init__(self):
     self.word_to_index = {}
@@ -9,7 +13,14 @@ class Vocab(object):
     self.word_freq = defaultdict(int)
     self.total_words = 0
     self.unknown = '<unk>'
+    self.go = '<go>'
+    self.pad = '<pad>'
+    self.eos = '<eos>'
     self.add_word(self.unknown, count=0)
+    self.add_word(self.go, count=0)
+    self.add_word(self.pad, count=0)
+    self.add_word(self.eos, count=0)
+
 
   def add_word(self, word, count=1):
     if word not in self.word_to_index:

@@ -189,7 +189,11 @@ class OpinExtractSeq2SeqModel(object):
 
     # Summaries
     embedding_hist = tf.histogram_summary("embedding", embedding)
-
+    self.merged_summaries = []
+    for (i, loss) in enumerate(self.losses):
+        l_summ = tf.scalar_summary("loss%d" %(i), loss)
+        self.merged_summaries.append(tf.merge_summary([embedding_hist,
+                                                     l_summ]))
 
     self.saver = tf.train.Saver(tf.all_variables())
 
@@ -247,14 +251,19 @@ class OpinExtractSeq2SeqModel(object):
       for l in xrange(decoder_size):  # Output logits.
         output_feed.append(self.outputs[bucket_id][l])
 
+    output_feed.append(self.merged_summaries[bucket_id])
     outputs = session.run(output_feed, input_feed)
+    merged = outputs[-1]
+    outputs = outputs[:-1]
+
     if not forward_only:
-      return outputs[1], outputs[2], None  # Gradient norm, loss, no outputs.
+      return outputs[1], outputs[2], None, merged  # Gradient norm, loss, no outputs.
     else:
-      return None, outputs[0], outputs[1:]  # No gradient norm, loss, outputs.
+      return None, outputs[0], outputs[1:], merged  # No gradient norm, loss, outputs.
 
   def get_batch(self, data, bucket_id):
     """Get a random batch of data from the specified bucket, prepare for step.
+
 
     To feed data in step(..) it must be a list of batch-major vectors, while
     data here contains single length-major cases. So the main logic of this
