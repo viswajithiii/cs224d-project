@@ -1,5 +1,6 @@
 import sys
 
+PRINT_PROLOGUE = False
 
 def compute_overlap_confusion(preds, trues):
     """
@@ -88,16 +89,19 @@ def compute_overlap_confusion(preds, trues):
     binary_recall = {}
     prop_recall = {}
     for s in ['DSE', 'ESE']:
-        print 'For', s
-        print 'Total true windows:', total_true_windows[s]
-        print 'Total number of windows with some overlap:', correct_true_windows[s]
+        if PRINT_PROLOGUE:
+            print 'For', s
+            print 'Total true windows:', total_true_windows[s]
+            print 'Total number of windows with some overlap:', correct_true_windows[s]
         binary_recall[s] = float(correct_true_windows[s])/total_true_windows[s]
-        print 'Binary recall:', binary_recall[s]
-        print 'Total number of words in true windows:', total_true_windows_words[s]
-        print 'Total number of overlapping words:', correct_true_windows_words[s]
-        print 'Sum true proportions:', sum_true_proportions[s]
+        if PRINT_PROLOGUE:
+            print 'Binary recall:', binary_recall[s]
+            print 'Total number of words in true windows:', total_true_windows_words[s]
+            print 'Total number of overlapping words:', correct_true_windows_words[s]
+            print 'Sum true proportions:', sum_true_proportions[s]
         prop_recall[s] = float(sum_true_proportions[s])/total_true_windows[s]
-        print 'Proportional recall:', prop_recall[s]
+        if PRINT_PROLOGUE:
+            print 'Proportional recall:', prop_recall[s]
 
 
     #  Next, we iterate over the predicted labels and compute precision.
@@ -172,16 +176,19 @@ def compute_overlap_confusion(preds, trues):
     binary_prec= {}
     prop_prec = {}
     for s in ['DSE', 'ESE']:
-        print 'For', s
-        print 'Total pred windows:', total_pred_windows[s]
-        print 'Total number of windows with some overlap:', correct_pred_windows[s]
+        if PRINT_PROLOGUE:
+            print 'For', s
+            print 'Total pred windows:', total_pred_windows[s]
+            print 'Total number of windows with some overlap:', correct_pred_windows[s]
         binary_prec[s] = float(correct_pred_windows[s])/total_pred_windows[s]
-        print 'Binary precision:', binary_prec[s]
-        print 'Total number of words in pred windows:', total_pred_windows_words[s]
-        print 'Total number of overlapping words:', correct_pred_windows_words[s]
-        print 'Sum pred propotions:', sum_pred_proportions[s]
+        if PRINT_PROLOGUE:
+            print 'Binary precision:', binary_prec[s]
+            print 'Total number of words in pred windows:', total_pred_windows_words[s]
+            print 'Total number of overlapping words:', correct_pred_windows_words[s]
+            print 'Sum pred propotions:', sum_pred_proportions[s]
         prop_prec[s] = float(sum_pred_proportions[s])/total_pred_windows[s]
-        print 'Proportional precision:', prop_prec[s]
+        if PRINT_PROLOGUE:
+            print 'Proportional precision:', prop_prec[s]
 
     print
     print '#### FINAL SUMMARY ####'

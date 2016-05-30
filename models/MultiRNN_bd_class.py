@@ -27,7 +27,7 @@ class Config(object):
     lr = 0.005
     # training_iters = 100000
     # training_epochs = 200 #Hyperparameter used in paper
-    training_epochs = 200
+    training_epochs = 50
     minibatch_sentence_size = 80  # Hyperparameter used in paper
     batch_size = 64
     display_step = 1
