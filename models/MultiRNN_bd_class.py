@@ -13,7 +13,7 @@ it is either at the beginning(B) or the inside (I) of a phrase. So there are
 five classes in total: B_DSE, I_DSE, B_ESE, I_ESE and O.
 """
 
-DEBUG = True 
+DEBUG = False
 
 class Config(object):
     """
@@ -27,9 +27,9 @@ class Config(object):
     lr = 0.005
     # training_iters = 100000
     # training_epochs = 200 #Hyperparameter used in paper
-    training_epochs = 4
+    training_epochs = 200
     minibatch_sentence_size = 80  # Hyperparameter used in paper
-    batch_size = 16
+    batch_size = 64
     display_step = 1
 
     num_input = 300  # Word vector length
