@@ -52,7 +52,7 @@ tf.app.flags.DEFINE_float("learning_rate_decay_factor", 0.99,
                           "Learning rate decays by this much.")
 tf.app.flags.DEFINE_float("max_gradient_norm", 5.0,
                           "Clip gradients to this norm.")
-tf.app.flags.DEFINE_integer("batch_size", 2,
+tf.app.flags.DEFINE_integer("batch_size", 64,
                             "Batch size to use during training.")
 tf.app.flags.DEFINE_integer("size", 300, "Size of each model layer.")
 tf.app.flags.DEFINE_integer("num_layers", 1, "Number of layers in the model.")
@@ -77,7 +77,7 @@ _buckets = [(90, 15),
             (150, 15), (150, 30),
             (200, 15), (300, 15), (300, 40)]
 
-_buckets = _buckets[:1]
+#_buckets = _buckets[:1]
 
 
 def read_data(file_path, vocab):
@@ -169,7 +169,7 @@ def train():
     step_time, loss = 0.0, 0.0
     current_step = 0
     previous_losses = []
-    steps_per_val_eval = 5
+    steps_per_val_eval = 20
     while True:
       # Choose a bucket according to data distribution. We pick a random number
       # in [0, 1] and use the corresponding interval in train_buckets_scale.
@@ -221,11 +221,11 @@ def train():
                 out_f.write('For step number: %d\n' %(model.global_step.eval()))
                 for batch in range(FLAGS.batch_size):
                     out_f.write('Number: %d\n' % batch)
-                    print ('Input sentence:' +
+                    out_f.write('Input sentence:' +
                         ' '.join([vocab.decode(x[batch])
                                     for x in encoder_inputs]
                                     ) + '\n')
-                    print ('Output sentence:' +
+                    out_f.write('Output sentence:' +
                             ' '.join([vocab.decode(x[batch])
                                     for x in arg_max_outputs]) + '\n')
 
