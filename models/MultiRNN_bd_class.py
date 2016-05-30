@@ -13,7 +13,7 @@ it is either at the beginning(B) or the inside (I) of a phrase. So there are
 five classes in total: B_DSE, I_DSE, B_ESE, I_ESE and O.
 """
 
-DEBUG = True
+DEBUG = False
 
 class Config(object):
     """

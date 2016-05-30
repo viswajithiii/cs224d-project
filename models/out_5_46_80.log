@@ -1,841 +1,0 @@
-Loading data ...
-Loaded data. Took 0.605098 seconds.
-Creating computation graph ...
-Created computation graph. Took 59.710305 seconds.
-Epoch number: 1
-0 / 51 : Current loss = 2.51049995422, Current accuracy = 0.089453130960510 / 51 : Current loss = 0.754563748837, Current accuracy = 0.80800795555120 / 51 : Current loss = 0.660950005054, Current accuracy = 0.8312501311330 / 51 : Current loss = 0.724484443665, Current accuracy = 0.80917984247240 / 51 : Current loss = 0.721488416195, Current accuracy = 0.81152349710550 / 51 : Current loss = 0.737306058407, Current accuracy = 0.80488294363
-Reverse epoch.
-0 / 51 : Current loss = 0.737516224384, Current accuracy = 0.8048829436310 / 51 : Current loss = 0.721974134445, Current accuracy = 0.81152355670920 / 51 : Current loss = 0.722323417664, Current accuracy = 0.80917984247230 / 51 : Current loss = 0.659538984299, Current accuracy = 0.83125007152640 / 51 : Current loss = 0.731348872185, Current accuracy = 0.80800789594750 / 51 : Current loss = 0.668567240238, Current accuracy = 0.827734589577
-
-[[    0     0     0     0   874]
- [    0     0     0     0   634]
- [    0     0     0     0  1030]
- [    0     0     0     0  2226]
- [    0     0     0     0 20836]]
-Tag: BDSE - P nan / R 0.0000 / F1 nan
-Tag: IDSE - P nan / R 0.0000 / F1 nan
-Tag: BESE - P nan / R 0.0000 / F1 nan
-Tag: IESE - P nan / R 0.0000 / F1 nan
-Tag: O - P 0.8139 / R 1.0000 / F1 0.8974
-Validation Loss = 0.716632, Validation Accuracy = 0.81391
-Epoch number: 2
-0 / 51 : Current loss = 0.68545627594, Current accuracy = 0.81875008344710 / 51 : Current loss = 0.729706525803, Current accuracy = 0.80800789594720 / 51 : Current loss = 0.66012275219, Current accuracy = 0.8312501311330 / 51 : Current loss = 0.724690556526, Current accuracy = 0.80917978286740 / 51 : Current loss = 0.72279882431, Current accuracy = 0.81152355670950 / 51 : Current loss = 0.737915158272, Current accuracy = 0.80488294363
-Reverse epoch.
-0 / 51 : Current loss = 0.737437725067, Current accuracy = 0.8048829436310 / 51 : Current loss = 0.721328675747, Current accuracy = 0.81152349710520 / 51 : Current loss = 0.722630977631, Current accuracy = 0.80917984247230 / 51 : Current loss = 0.659157991409, Current accuracy = 0.8312501311340 / 51 : Current loss = 0.73106354475, Current accuracy = 0.80800795555150 / 51 : Current loss = 0.669249117374, Current accuracy = 0.827734589577
-
-[[    0     0     0     0   874]
- [    0     0     0     0   634]
- [    0     0     0     0  1030]
- [    0     0     0     0  2226]
- [    0     0     0     0 20836]]
-Tag: BDSE - P nan / R 0.0000 / F1 nan
-Tag: IDSE - P nan / R 0.0000 / F1 nan
-Tag: BESE - P nan / R 0.0000 / F1 nan
-Tag: IESE - P nan / R 0.0000 / F1 nan
-Tag: O - P 0.8139 / R 1.0000 / F1 0.8974
-Validation Loss = 0.716721, Validation Accuracy = 0.81391
-Epoch number: 3
-0 / 51 : Current loss = 0.685189843178, Current accuracy = 0.81875008344710 / 51 : Current loss = 0.730120658875, Current accuracy = 0.80800795555120 / 51 : Current loss = 0.660222530365, Current accuracy = 0.8312501311330 / 51 : Current loss = 0.724596619606, Current accuracy = 0.80917984247240 / 51 : Current loss = 0.722461223602, Current accuracy = 0.81152355670950 / 51 : Current loss = 0.737988591194, Current accuracy = 0.80488294363
-Reverse epoch.
-0 / 51 : Current loss = 0.737622857094, Current accuracy = 0.8048829436310 / 51 : Current loss = 0.721421062946, Current accuracy = 0.81152355670920 / 51 : Current loss = 0.72255051136, Current accuracy = 0.80917984247230 / 51 : Current loss = 0.659099757671, Current accuracy = 0.8312501311340 / 51 : Current loss = 0.731306433678, Current accuracy = 0.80800795555150 / 51 : Current loss = 0.668724477291, Current accuracy = 0.827734470367
-
-[[    0     0     0     0   874]
- [    0     0     0     0   634]
- [    0     0     0     0  1030]
- [    0     0     0     0  2226]
- [    0     0     0     0 20836]]
-Tag: BDSE - P nan / R 0.0000 / F1 nan
-Tag: IDSE - P nan / R 0.0000 / F1 nan
-Tag: BESE - P nan / R 0.0000 / F1 nan
-Tag: IESE - P nan / R 0.0000 / F1 nan
-Tag: O - P 0.8139 / R 1.0000 / F1 0.8974
-Validation Loss = 0.716655, Validation Accuracy = 0.81391
-Epoch number: 4
-0 / 51 : Current loss = 0.683958649635, Current accuracy = 0.81875008344710 / 51 : Current loss = 0.729721069336, Current accuracy = 0.80800795555120 / 51 : Current loss = 0.659949302673, Current accuracy = 0.8312501311330 / 51 : Current loss = 0.72447925806, Current accuracy = 0.80917978286740 / 51 : Current loss = 0.722239613533, Current accuracy = 0.81152355670950 / 51 : Current loss = 0.736963152885, Current accuracy = 0.80488294363
-Reverse epoch.
-0 / 51 : Current loss = 0.736522316933, Current accuracy = 0.8048829436310 / 51 : Current loss = 0.714545190334, Current accuracy = 0.81152355670920 / 51 : Current loss = 0.68781286478, Current accuracy = 0.80917990207730 / 51 : Current loss = 0.588769376278, Current accuracy = 0.8312501311340 / 51 : Current loss = 0.645840764046, Current accuracy = 0.80800795555150 / 51 : Current loss = 0.58152115345, Current accuracy = 0.827734529972
-
-[[    0     0     0     0   874]
- [    0     0     0     0   634]
- [    0     0     0     0  1030]
- [    0     0     0     0  2226]
- [    0     0     0     0 20836]]
-Tag: BDSE - P nan / R 0.0000 / F1 nan
-Tag: IDSE - P nan / R 0.0000 / F1 nan
-Tag: BESE - P nan / R 0.0000 / F1 nan
-Tag: IESE - P nan / R 0.0000 / F1 nan
-Tag: O - P 0.8139 / R 1.0000 / F1 0.8974
-Validation Loss = 0.600090, Validation Accuracy = 0.81391
-Epoch number: 5
-0 / 51 : Current loss = 0.569535195827, Current accuracy = 0.82402354478810 / 51 : Current loss = 0.61192882061, Current accuracy = 0.80800795555120 / 51 : Current loss = 0.541934728622, Current accuracy = 0.8312501311330 / 51 : Current loss = 0.607880592346, Current accuracy = 0.80917984247240 / 51 : Current loss = 0.603075802326, Current accuracy = 0.81523454189350 / 51 : Current loss = 0.598241567612, Current accuracy = 0.80488294363
-Reverse epoch.
-0 / 51 : Current loss = 0.58932185173, Current accuracy = 0.8048829436310 / 51 : Current loss = 0.579035401344, Current accuracy = 0.81582039594720 / 51 : Current loss = 0.583077728748, Current accuracy = 0.81308609247230 / 51 : Current loss = 0.499614179134, Current accuracy = 0.83574235439340 / 51 : Current loss = 0.566533863544, Current accuracy = 0.81191420555150 / 51 : Current loss = 0.492490112782, Current accuracy = 0.839257895947
-
-[[    9     0    40   103   722]
- [    1     0     3   188   442]
- [    9     0    59   225   737]
- [    2     0    20   633  1571]
- [    5     0    33   427 20371]]
-Tag: BDSE - P 0.3462 / R 0.0103 / F1 0.0200
-Tag: IDSE - P nan / R 0.0000 / F1 nan
-Tag: BESE - P 0.3806 / R 0.0573 / F1 0.0996
-Tag: IESE - P 0.4016 / R 0.2844 / F1 0.3330
-Tag: O - P 0.8544 / R 0.9777 / F1 0.9119
-Validation Loss = 0.535768, Validation Accuracy = 0.82313
-Epoch number: 6
-0 / 51 : Current loss = 0.507656514645, Current accuracy = 0.83320319652610 / 51 : Current loss = 0.549297094345, Current accuracy = 0.8146485686320 / 51 : Current loss = 0.479312807322, Current accuracy = 0.83750015497230 / 51 : Current loss = 0.572681427002, Current accuracy = 0.81562519073540 / 51 : Current loss = 0.561900615692, Current accuracy = 0.81054705381450 / 51 : Current loss = 0.551802814007, Current accuracy = 0.816992282867
-Reverse epoch.
-0 / 51 : Current loss = 0.552002251148, Current accuracy = 0.81933611631410 / 51 : Current loss = 0.551131129265, Current accuracy = 0.81777358055120 / 51 : Current loss = 0.553207695484, Current accuracy = 0.81582039594730 / 51 : Current loss = 0.484313488007, Current accuracy = 0.84414076805140 / 51 : Current loss = 0.521320343018, Current accuracy = 0.82402366399850 / 51 : Current loss = 0.459879547358, Current accuracy = 0.840039253235
-
-[[  165     8    64    85   552]
- [    6    28    12   194   394]
- [   69     8    98   219   636]
- [   10     7    32   713  1464]
- [   75    10    54   428 20269]]
-Tag: BDSE - P 0.5077 / R 0.1888 / F1 0.2752
-Tag: IDSE - P 0.4590 / R 0.0442 / F1 0.0806
-Tag: BESE - P 0.3769 / R 0.0951 / F1 0.1519
-Tag: IESE - P 0.4350 / R 0.3203 / F1 0.3690
-Tag: O - P 0.8694 / R 0.9728 / F1 0.9182
-Validation Loss = 0.500856, Validation Accuracy = 0.83098
-Epoch number: 7
-0 / 51 : Current loss = 0.46820500493, Current accuracy = 0.83867204189310 / 51 : Current loss = 0.520043611526, Current accuracy = 0.82070326805120 / 51 : Current loss = 0.447982996702, Current accuracy = 0.8507813811330 / 51 : Current loss = 0.523557186127, Current accuracy = 0.8234376311340 / 51 : Current loss = 0.511048436165, Current accuracy = 0.82285165786750 / 51 : Current loss = 0.529082536697, Current accuracy = 0.824414253235
-Reverse epoch.
-0 / 51 : Current loss = 0.516480028629, Current accuracy = 0.82851582765610 / 51 : Current loss = 0.497915804386, Current accuracy = 0.82871103286720 / 51 : Current loss = 0.500900685787, Current accuracy = 0.82871115207730 / 51 : Current loss = 0.441312164068, Current accuracy = 0.85449236631440 / 51 : Current loss = 0.491510152817, Current accuracy = 0.83437514305150 / 51 : Current loss = 0.426526606083, Current accuracy = 0.847656428814
-
-[[  283    44    31    62   454]
- [   18   130     4   147   335]
- [   33    12   122   259   604]
- [   13    24    25   880  1284]
- [  116    45    53   569 20053]]
-Tag: BDSE - P 0.6112 / R 0.3238 / F1 0.4233
-Tag: IDSE - P 0.5098 / R 0.2050 / F1 0.2925
-Tag: BESE - P 0.5191 / R 0.1184 / F1 0.1929
-Tag: IESE - P 0.4591 / R 0.3953 / F1 0.4248
-Tag: O - P 0.8822 / R 0.9624 / F1 0.9206
-Validation Loss = 0.477643, Validation Accuracy = 0.83859
-Epoch number: 8
-0 / 51 : Current loss = 0.432403892279, Current accuracy = 0.84746110439310 / 51 : Current loss = 0.480898231268, Current accuracy = 0.83496105670920 / 51 : Current loss = 0.410593807697, Current accuracy = 0.86210942268430 / 51 : Current loss = 0.500349581242, Current accuracy = 0.8351563811340 / 51 : Current loss = 0.46874320507, Current accuracy = 0.83593767881450 / 51 : Current loss = 0.48010084033, Current accuracy = 0.841796994209
-Reverse epoch.
-0 / 51 : Current loss = 0.482162594795, Current accuracy = 0.84121108055110 / 51 : Current loss = 0.471506416798, Current accuracy = 0.83750015497220 / 51 : Current loss = 0.472400605679, Current accuracy = 0.83925789594730 / 51 : Current loss = 0.411929309368, Current accuracy = 0.86406260728840 / 51 : Current loss = 0.45749849081, Current accuracy = 0.84492206573550 / 51 : Current loss = 0.404723197222, Current accuracy = 0.852343916893
-
-[[  275    84    64    45   406]
- [   16   189    10   113   306]
- [   15    15   295   244   461]
- [   11    50    80   947  1138]
- [  113    78   246   732 19667]]
-Tag: BDSE - P 0.6395 / R 0.3146 / F1 0.4218
-Tag: IDSE - P 0.4543 / R 0.2981 / F1 0.3600
-Tag: BESE - P 0.4245 / R 0.2864 / F1 0.3420
-Tag: IESE - P 0.4551 / R 0.4254 / F1 0.4397
-Tag: O - P 0.8948 / R 0.9439 / F1 0.9187
-Validation Loss = 0.469955, Validation Accuracy = 0.83488
-Epoch number: 9
-0 / 51 : Current loss = 0.416053950787, Current accuracy = 0.85117208957710 / 51 : Current loss = 0.449226528406, Current accuracy = 0.84667986631420 / 51 : Current loss = 0.401184350252, Current accuracy = 0.86328136920930 / 51 : Current loss = 0.471496224403, Current accuracy = 0.83671885728840 / 51 : Current loss = 0.464916944504, Current accuracy = 0.83671891689350 / 51 : Current loss = 0.462748795748, Current accuracy = 0.844140768051
-Reverse epoch.
-0 / 51 : Current loss = 0.467269778252, Current accuracy = 0.84277355670910 / 51 : Current loss = 0.441870898008, Current accuracy = 0.84511733055120 / 51 : Current loss = 0.450266808271, Current accuracy = 0.84550797939330 / 51 : Current loss = 0.388331890106, Current accuracy = 0.86718761920940 / 51 : Current loss = 0.432923197746, Current accuracy = 0.84941416978850 / 51 : Current loss = 0.382692217827, Current accuracy = 0.864648640156
-
-[[  379    75    42    57   321]
- [   25   213     9   121   266]
- [   33    17   245   310   425]
- [   23    51    55  1146   951]
- [  188   111   189  1023 19325]]
-Tag: BDSE - P 0.5849 / R 0.4336 / F1 0.4980
-Tag: IDSE - P 0.4561 / R 0.3360 / F1 0.3869
-Tag: BESE - P 0.4537 / R 0.2379 / F1 0.3121
-Tag: IESE - P 0.4313 / R 0.5148 / F1 0.4694
-Tag: O - P 0.9078 / R 0.9275 / F1 0.9175
-Validation Loss = 0.463103, Validation Accuracy = 0.83234
-Epoch number: 10
-0 / 51 : Current loss = 0.387943744659, Current accuracy = 0.8654298186310 / 51 : Current loss = 0.427546799183, Current accuracy = 0.84941422939320 / 51 : Current loss = 0.37268191576, Current accuracy = 0.8751954436330 / 51 : Current loss = 0.445409208536, Current accuracy = 0.84042990207740 / 51 : Current loss = 0.429364681244, Current accuracy = 0.84570330381450 / 51 : Current loss = 0.434797585011, Current accuracy = 0.850586116314
-Reverse epoch.
-0 / 51 : Current loss = 0.427857071161, Current accuracy = 0.8507813811310 / 51 : Current loss = 0.424421340227, Current accuracy = 0.85117197036720 / 51 : Current loss = 0.431173563004, Current accuracy = 0.84082043170930 / 51 : Current loss = 0.365564703941, Current accuracy = 0.87226581573540 / 51 : Current loss = 0.416664540768, Current accuracy = 0.85117197036750 / 51 : Current loss = 0.364795267582, Current accuracy = 0.868750154972
-
-[[  407    97    35    45   290]
- [   25   266    10    85   248]
- [   47    28   262   272   421]
- [   27    87    68  1088   956]
- [  215   200   197   926 19298]]
-Tag: BDSE - P 0.5645 / R 0.4657 / F1 0.5103
-Tag: IDSE - P 0.3923 / R 0.4196 / F1 0.4055
-Tag: BESE - P 0.4580 / R 0.2544 / F1 0.3271
-Tag: IESE - P 0.4503 / R 0.4888 / F1 0.4688
-Tag: O - P 0.9097 / R 0.9262 / F1 0.9179
-Validation Loss = 0.456226, Validation Accuracy = 0.83285
-Epoch number: 11
-0 / 51 : Current loss = 0.371821582317, Current accuracy = 0.86992204189310 / 51 : Current loss = 0.399414479733, Current accuracy = 0.86015641689320 / 51 : Current loss = 0.358356148005, Current accuracy = 0.87773448228830 / 51 : Current loss = 0.435482442379, Current accuracy = 0.84472674131440 / 51 : Current loss = 0.413709431887, Current accuracy = 0.85292989015650 / 51 : Current loss = 0.420484513044, Current accuracy = 0.85175794363
-Reverse epoch.
-0 / 51 : Current loss = 0.421228021383, Current accuracy = 0.85019546747210 / 51 : Current loss = 0.389394372702, Current accuracy = 0.86367201805120 / 51 : Current loss = 0.412589251995, Current accuracy = 0.85156261920930 / 51 : Current loss = 0.352445781231, Current accuracy = 0.87910163402640 / 51 : Current loss = 0.405479133129, Current accuracy = 0.85878920555150 / 51 : Current loss = 0.347731143236, Current accuracy = 0.874804794788
-
-[[  396    98    24    49   307]
- [   23   267     7   100   237]
- [   37    24   203   322   444]
- [   26    71    51  1158   920]
- [  189   193   118   990 19346]]
-Tag: BDSE - P 0.5902 / R 0.4531 / F1 0.5126
-Tag: IDSE - P 0.4089 / R 0.4211 / F1 0.4149
-Tag: BESE - P 0.5037 / R 0.1971 / F1 0.2833
-Tag: IESE - P 0.4422 / R 0.5202 / F1 0.4780
-Tag: O - P 0.9102 / R 0.9285 / F1 0.9193
-Validation Loss = 0.454378, Validation Accuracy = 0.83477
-Epoch number: 12
-0 / 51 : Current loss = 0.35270100832, Current accuracy = 0.87675791978810 / 51 : Current loss = 0.382569432259, Current accuracy = 0.86386740207720 / 51 : Current loss = 0.337389826775, Current accuracy = 0.88691425323530 / 51 : Current loss = 0.43496465683, Current accuracy = 0.84628921747240 / 51 : Current loss = 0.394156187773, Current accuracy = 0.86269539594750 / 51 : Current loss = 0.400487482548, Current accuracy = 0.862109482288
-Reverse epoch.
-0 / 51 : Current loss = 0.39593937993, Current accuracy = 0.86308610439310 / 51 : Current loss = 0.379133582115, Current accuracy = 0.86660170555120 / 51 : Current loss = 0.391662091017, Current accuracy = 0.85722672939330 / 51 : Current loss = 0.339192450047, Current accuracy = 0.88593769073540 / 51 : Current loss = 0.3831127882, Current accuracy = 0.86289083957750 / 51 : Current loss = 0.338426589966, Current accuracy = 0.877734541893
-
-[[  396    85    29    52   312]
- [   27   264     8    87   248]
- [   29    20   244   280   457]
- [   22    68    52  1106   978]
- [  176   193   147   832 19488]]
-Tag: BDSE - P 0.6092 / R 0.4531 / F1 0.5197
-Tag: IDSE - P 0.4190 / R 0.4164 / F1 0.4177
-Tag: BESE - P 0.5083 / R 0.2369 / F1 0.3232
-Tag: IESE - P 0.4692 / R 0.4969 / F1 0.4827
-Tag: O - P 0.9071 / R 0.9353 / F1 0.9210
-Validation Loss = 0.446734, Validation Accuracy = 0.83977
-Epoch number: 13
-0 / 51 : Current loss = 0.331941902637, Current accuracy = 0.88144540786710 / 51 : Current loss = 0.375093996525, Current accuracy = 0.87109386920920 / 51 : Current loss = 0.32980453968, Current accuracy = 0.88828134536730 / 51 : Current loss = 0.402930676937, Current accuracy = 0.85039073228840 / 51 : Current loss = 0.380003303289, Current accuracy = 0.86289077997250 / 51 : Current loss = 0.382182717323, Current accuracy = 0.861718893051
-Reverse epoch.
-0 / 51 : Current loss = 0.378711491823, Current accuracy = 0.86191427707710 / 51 : Current loss = 0.355351388454, Current accuracy = 0.87441420555120 / 51 : Current loss = 0.369313389063, Current accuracy = 0.86484396457730 / 51 : Current loss = 0.332372307777, Current accuracy = 0.88925790786740 / 51 : Current loss = 0.373527407646, Current accuracy = 0.8664063811350 / 51 : Current loss = 0.323269665241, Current accuracy = 0.882226705551
-
-[[  374    87    28    41   344]
- [   27   261     8    78   260]
- [   31    19   259   237   484]
- [   28    66    62  1026  1044]
- [  147   154   143   745 19647]]
-Tag: BDSE - P 0.6161 / R 0.4279 / F1 0.5051
-Tag: IDSE - P 0.4446 / R 0.4117 / F1 0.4275
-Tag: BESE - P 0.5180 / R 0.2515 / F1 0.3386
-Tag: IESE - P 0.4824 / R 0.4609 / F1 0.4714
-Tag: O - P 0.9021 / R 0.9429 / F1 0.9221
-Validation Loss = 0.447235, Validation Accuracy = 0.84246
-Epoch number: 14
-0 / 51 : Current loss = 0.313790649176, Current accuracy = 0.88789081573510 / 51 : Current loss = 0.341686844826, Current accuracy = 0.88437509536720 / 51 : Current loss = 0.32040065527, Current accuracy = 0.89179706573530 / 51 : Current loss = 0.383741080761, Current accuracy = 0.85488295555140 / 51 : Current loss = 0.360059589148, Current accuracy = 0.87441420555150 / 51 : Current loss = 0.359593331814, Current accuracy = 0.871484518051
-Reverse epoch.
-0 / 51 : Current loss = 0.352231502533, Current accuracy = 0.87460952997210 / 51 : Current loss = 0.335693717003, Current accuracy = 0.88437521457720 / 51 : Current loss = 0.363416284323, Current accuracy = 0.86601585149830 / 51 : Current loss = 0.323342055082, Current accuracy = 0.89355480670940 / 51 : Current loss = 0.36036914587, Current accuracy = 0.8751954436350 / 51 : Current loss = 0.302165031433, Current accuracy = 0.887304782867
-
-[[  393    81    29    48   323]
- [   27   259     8    82   258]
- [   39    21   258   254   458]
- [   25    69    61  1072   999]
- [  158   163   157   871 19487]]
-Tag: BDSE - P 0.6121 / R 0.4497 / F1 0.5185
-Tag: IDSE - P 0.4368 / R 0.4085 / F1 0.4222
-Tag: BESE - P 0.5029 / R 0.2505 / F1 0.3344
-Tag: IESE - P 0.4607 / R 0.4816 / F1 0.4709
-Tag: O - P 0.9053 / R 0.9353 / F1 0.9200
-Validation Loss = 0.454300, Validation Accuracy = 0.83863
-Epoch number: 15
-0 / 51 : Current loss = 0.297839015722, Current accuracy = 0.89570319652610 / 51 : Current loss = 0.322391539812, Current accuracy = 0.88535177707720 / 51 : Current loss = 0.309891849756, Current accuracy = 0.89238303899830 / 51 : Current loss = 0.360106438398, Current accuracy = 0.86367201805140 / 51 : Current loss = 0.34668174386, Current accuracy = 0.8771485686350 / 51 : Current loss = 0.343036085367, Current accuracy = 0.877148628235
-Reverse epoch.
-0 / 51 : Current loss = 0.330358326435, Current accuracy = 0.88496112823510 / 51 : Current loss = 0.310910403728, Current accuracy = 0.8937501311320 / 51 : Current loss = 0.346970021725, Current accuracy = 0.86972677707730 / 51 : Current loss = 0.316974699497, Current accuracy = 0.8927735686340 / 51 : Current loss = 0.351407527924, Current accuracy = 0.87656265497250 / 51 : Current loss = 0.291814625263, Current accuracy = 0.896093964577
-
-[[  383    70    34    58   329]
- [   28   241    10   114   241]
- [   31    22   270   292   415]
- [   23    46    61  1191   905]
- [  142   132   174  1146 19242]]
-Tag: BDSE - P 0.6310 / R 0.4382 / F1 0.5172
-Tag: IDSE - P 0.4716 / R 0.3801 / F1 0.4210
-Tag: BESE - P 0.4918 / R 0.2621 / F1 0.3420
-Tag: IESE - P 0.4252 / R 0.5350 / F1 0.4738
-Tag: O - P 0.9106 / R 0.9235 / F1 0.9170
-Validation Loss = 0.469622, Validation Accuracy = 0.83309
-Epoch number: 16
-0 / 51 : Current loss = 0.288495063782, Current accuracy = 0.90019547939310 / 51 : Current loss = 0.311459362507, Current accuracy = 0.88750016689320 / 51 : Current loss = 0.309672117233, Current accuracy = 0.89316415786730 / 51 : Current loss = 0.353678822517, Current accuracy = 0.8654298186340 / 51 : Current loss = 0.342284351587, Current accuracy = 0.8791016936350 / 51 : Current loss = 0.327803432941, Current accuracy = 0.885937690735
-Reverse epoch.
-0 / 51 : Current loss = 0.319083094597, Current accuracy = 0.88906264305110 / 51 : Current loss = 0.302286416292, Current accuracy = 0.8888673186320 / 51 : Current loss = 0.331900447607, Current accuracy = 0.8761720061330 / 51 : Current loss = 0.315188080072, Current accuracy = 0.89101576805140 / 51 : Current loss = 0.337134361267, Current accuracy = 0.87656259536750 / 51 : Current loss = 0.276743650436, Current accuracy = 0.900000154972
-
-[[  404    79    42    56   293]
- [   27   242    13   115   237]
- [   36    22   314   284   374]
- [   24    74    70  1196   862]
- [  181   169   229  1210 19047]]
-Tag: BDSE - P 0.6012 / R 0.4622 / F1 0.5226
-Tag: IDSE - P 0.4130 / R 0.3817 / F1 0.3967
-Tag: BESE - P 0.4701 / R 0.3049 / F1 0.3698
-Tag: IESE - P 0.4180 / R 0.5373 / F1 0.4702
-Tag: O - P 0.9151 / R 0.9141 / F1 0.9146
-Validation Loss = 0.480136, Validation Accuracy = 0.82824
-Epoch number: 17
-0 / 51 : Current loss = 0.274325996637, Current accuracy = 0.90585952997210 / 51 : Current loss = 0.294542044401, Current accuracy = 0.89707040786720 / 51 : Current loss = 0.292696356773, Current accuracy = 0.89628916978830 / 51 : Current loss = 0.33221372962, Current accuracy = 0.87441420555140 / 51 : Current loss = 0.323791354895, Current accuracy = 0.88613295555150 / 51 : Current loss = 0.312083005905, Current accuracy = 0.890039205551
-Reverse epoch.
-0 / 51 : Current loss = 0.305826663971, Current accuracy = 0.89316415786710 / 51 : Current loss = 0.289311438799, Current accuracy = 0.89511734247220 / 51 : Current loss = 0.300320625305, Current accuracy = 0.89042985439330 / 51 : Current loss = 0.298222661018, Current accuracy = 0.89882826805140 / 51 : Current loss = 0.314769744873, Current accuracy = 0.88281261920950 / 51 : Current loss = 0.261261969805, Current accuracy = 0.909570395947
-
-[[  388   101    39    52   294]
- [   23   263    13   111   224]
- [   33    23   316   289   369]
- [   17    91    81  1168   869]
- [  153   234   270  1145 19034]]
-Tag: BDSE - P 0.6319 / R 0.4439 / F1 0.5215
-Tag: IDSE - P 0.3694 / R 0.4148 / F1 0.3908
-Tag: BESE - P 0.4395 / R 0.3068 / F1 0.3613
-Tag: IESE - P 0.4224 / R 0.5247 / F1 0.4680
-Tag: O - P 0.9155 / R 0.9135 / F1 0.9145
-Validation Loss = 0.487199, Validation Accuracy = 0.82691
-Epoch number: 18
-0 / 51 : Current loss = 0.258354693651, Current accuracy = 0.91230475902610 / 51 : Current loss = 0.293906092644, Current accuracy = 0.89042985439320 / 51 : Current loss = 0.283327251673, Current accuracy = 0.90019547939330 / 51 : Current loss = 0.312936216593, Current accuracy = 0.88496100902640 / 51 : Current loss = 0.313633531332, Current accuracy = 0.88964855670950 / 51 : Current loss = 0.302201062441, Current accuracy = 0.892578244209
-Reverse epoch.
-0 / 51 : Current loss = 0.293036222458, Current accuracy = 0.89492201805110 / 51 : Current loss = 0.278784036636, Current accuracy = 0.89785170555120 / 51 : Current loss = 0.297864675522, Current accuracy = 0.89531272649830 / 51 : Current loss = 0.289903849363, Current accuracy = 0.90039074420940 / 51 : Current loss = 0.309288054705, Current accuracy = 0.89042979478850 / 51 : Current loss = 0.255531191826, Current accuracy = 0.90742200613
-
-[[  384   101    38    58   293]
- [   25   270    13   109   217]
- [   41    27   276   309   377]
- [   19    99    64  1202   842]
- [  171   254   223  1349 18839]]
-Tag: BDSE - P 0.6000 / R 0.4394 / F1 0.5073
-Tag: IDSE - P 0.3595 / R 0.4259 / F1 0.3899
-Tag: BESE - P 0.4495 / R 0.2680 / F1 0.3358
-Tag: IESE - P 0.3971 / R 0.5400 / F1 0.4576
-Tag: O - P 0.9159 / R 0.9042 / F1 0.9100
-Validation Loss = 0.510284, Validation Accuracy = 0.81918
-Epoch number: 19
-0 / 51 : Current loss = 0.256557136774, Current accuracy = 0.91152358055110 / 51 : Current loss = 0.282259255648, Current accuracy = 0.89882826805120 / 51 : Current loss = 0.276245236397, Current accuracy = 0.90195327997230 / 51 : Current loss = 0.309687882662, Current accuracy = 0.88339865207740 / 51 : Current loss = 0.315122842789, Current accuracy = 0.88964861631450 / 51 : Current loss = 0.289244353771, Current accuracy = 0.899023532867
-Reverse epoch.
-0 / 51 : Current loss = 0.278485238552, Current accuracy = 0.90214860439310 / 51 : Current loss = 0.275095760822, Current accuracy = 0.89980483055120 / 51 : Current loss = 0.298606276512, Current accuracy = 0.89492201805130 / 51 : Current loss = 0.292058318853, Current accuracy = 0.89687520265640 / 51 : Current loss = 0.318822562695, Current accuracy = 0.88691413402650 / 51 : Current loss = 0.260631084442, Current accuracy = 0.902929842472
-
-[[  363    88    52    53   318]
- [   22   247    12   110   243]
- [   31    13   335   278   373]
- [   25    63    89  1152   897]
- [  145   162   283  1122 19124]]
-Tag: BDSE - P 0.6195 / R 0.4153 / F1 0.4973
-Tag: IDSE - P 0.4311 / R 0.3896 / F1 0.4093
-Tag: BESE - P 0.4345 / R 0.3252 / F1 0.3720
-Tag: IESE - P 0.4243 / R 0.5175 / F1 0.4663
-Tag: O - P 0.9126 / R 0.9178 / F1 0.9152
-Validation Loss = 0.485251, Validation Accuracy = 0.82895
-Epoch number: 20
-0 / 51 : Current loss = 0.251526266336, Current accuracy = 0.9113282561310 / 51 : Current loss = 0.321376502514, Current accuracy = 0.88144540786720 / 51 : Current loss = 0.340674847364, Current accuracy = 0.87265634536730 / 51 : Current loss = 0.360332936049, Current accuracy = 0.86621111631440 / 51 : Current loss = 0.338542550802, Current accuracy = 0.87792992591950 / 51 : Current loss = 0.304122596979, Current accuracy = 0.894336104393
-Reverse epoch.
-0 / 51 : Current loss = 0.290190398693, Current accuracy = 0.89746111631410 / 51 : Current loss = 0.286060482264, Current accuracy = 0.89882832765620 / 51 : Current loss = 0.317823886871, Current accuracy = 0.88554704189330 / 51 : Current loss = 0.304828137159, Current accuracy = 0.89355480670940 / 51 : Current loss = 0.331126481295, Current accuracy = 0.87773448228850 / 51 : Current loss = 0.304144889116, Current accuracy = 0.887500166893
-
-[[  353    80    27    17   397]
- [   41   229    13    38   313]
- [   42    15   298   123   552]
- [   30    59   104   703  1330]
- [  119   108   166   314 20129]]
-Tag: BDSE - P 0.6034 / R 0.4039 / F1 0.4839
-Tag: IDSE - P 0.4664 / R 0.3612 / F1 0.4071
-Tag: BESE - P 0.4901 / R 0.2893 / F1 0.3639
-Tag: IESE - P 0.5883 / R 0.3158 / F1 0.4110
-Tag: O - P 0.8859 / R 0.9661 / F1 0.9243
-Validation Loss = 0.490342, Validation Accuracy = 0.84813
-Epoch number: 21
-0 / 51 : Current loss = 0.264608949423, Current accuracy = 0.90039074420910 / 51 : Current loss = 0.273499965668, Current accuracy = 0.90117198228820 / 51 : Current loss = 0.264213830233, Current accuracy = 0.90781265497230 / 51 : Current loss = 0.315294146538, Current accuracy = 0.88476580381440 / 51 : Current loss = 0.306775301695, Current accuracy = 0.88789069652650 / 51 : Current loss = 0.283931881189, Current accuracy = 0.900195479393
-Reverse epoch.
-0 / 51 : Current loss = 0.269742965698, Current accuracy = 0.90312510728810 / 51 : Current loss = 0.278698772192, Current accuracy = 0.90097665786720 / 51 : Current loss = 0.284896105528, Current accuracy = 0.8996095061330 / 51 : Current loss = 0.278670787811, Current accuracy = 0.90351581573540 / 51 : Current loss = 0.300462752581, Current accuracy = 0.88867193460550 / 51 : Current loss = 0.264639079571, Current accuracy = 0.906054913998
-
-[[  342    64    27    20   421]
- [   39   188    11    53   343]
- [   38    12   289   127   564]
- [   31    36   108   733  1318]
- [   90    71   162   340 20173]]
-Tag: BDSE - P 0.6333 / R 0.3913 / F1 0.4837
-Tag: IDSE - P 0.5067 / R 0.2965 / F1 0.3741
-Tag: BESE - P 0.4841 / R 0.2806 / F1 0.3553
-Tag: IESE - P 0.5758 / R 0.3293 / F1 0.4190
-Tag: O - P 0.8840 / R 0.9682 / F1 0.9242
-Validation Loss = 0.511976, Validation Accuracy = 0.84863
-Epoch number: 22
-0 / 51 : Current loss = 0.240200445056, Current accuracy = 0.91406261920910 / 51 : Current loss = 0.258606672287, Current accuracy = 0.91113287210520 / 51 : Current loss = 0.247525602579, Current accuracy = 0.91152352094730 / 51 : Current loss = 0.290297091007, Current accuracy = 0.89921885728840 / 51 : Current loss = 0.284728735685, Current accuracy = 0.89726579189350 / 51 : Current loss = 0.272596627474, Current accuracy = 0.903711080551
-Reverse epoch.
-0 / 51 : Current loss = 0.262419134378, Current accuracy = 0.90292978286710 / 51 : Current loss = 0.263619363308, Current accuracy = 0.90507829189320 / 51 : Current loss = 0.261831074953, Current accuracy = 0.90761739015630 / 51 : Current loss = 0.285827666521, Current accuracy = 0.90117204189340 / 51 : Current loss = 0.288712888956, Current accuracy = 0.89355480670950 / 51 : Current loss = 0.236887350678, Current accuracy = 0.915625154972
-
-[[  329    64    33    19   429]
- [   35   197    12    46   344]
- [   36    13   288   147   546]
- [   26    41    98   762  1299]
- [   88    83   185   402 20078]]
-Tag: BDSE - P 0.6401 / R 0.3764 / F1 0.4741
-Tag: IDSE - P 0.4950 / R 0.3107 / F1 0.3818
-Tag: BESE - P 0.4675 / R 0.2796 / F1 0.3499
-Tag: IESE - P 0.5538 / R 0.3423 / F1 0.4231
-Tag: O - P 0.8846 / R 0.9636 / F1 0.9224
-Validation Loss = 0.528710, Validation Accuracy = 0.84586
-Epoch number: 23
-0 / 51 : Current loss = 0.218874648213, Current accuracy = 0.92265635728810 / 51 : Current loss = 0.236453235149, Current accuracy = 0.91484385728820 / 51 : Current loss = 0.241865932941, Current accuracy = 0.91542983055130 / 51 : Current loss = 0.28116607666, Current accuracy = 0.89902353286740 / 51 : Current loss = 0.279747068882, Current accuracy = 0.89746111631450 / 51 : Current loss = 0.261352270842, Current accuracy = 0.908203303814
-Reverse epoch.
-0 / 51 : Current loss = 0.252850979567, Current accuracy = 0.90996110439310 / 51 : Current loss = 0.249735727906, Current accuracy = 0.90957045555120 / 51 : Current loss = 0.271346688271, Current accuracy = 0.90566420555130 / 51 : Current loss = 0.289929687977, Current accuracy = 0.9005860686340 / 51 : Current loss = 0.280623823404, Current accuracy = 0.89882826805150 / 51 : Current loss = 0.238299965858, Current accuracy = 0.91425794363
-
-[[  319    64    37    29   425]
- [   32   182    15    64   341]
- [   36    11   302   162   519]
- [   29    37    92   801  1267]
- [   99    85   195   505 19952]]
-Tag: BDSE - P 0.6194 / R 0.3650 / F1 0.4593
-Tag: IDSE - P 0.4802 / R 0.2871 / F1 0.3593
-Tag: BESE - P 0.4711 / R 0.2932 / F1 0.3615
-Tag: IESE - P 0.5131 / R 0.3598 / F1 0.4230
-Tag: O - P 0.8866 / R 0.9576 / F1 0.9207
-Validation Loss = 0.532218, Validation Accuracy = 0.84203
-Epoch number: 24
-0 / 51 : Current loss = 0.220400646329, Current accuracy = 0.92128926515610 / 51 : Current loss = 0.228068485856, Current accuracy = 0.91933608055120 / 51 : Current loss = 0.254754275084, Current accuracy = 0.9093751311330 / 51 : Current loss = 0.313450008631, Current accuracy = 0.88359391689340 / 51 : Current loss = 0.294996768236, Current accuracy = 0.89296895265650 / 51 : Current loss = 0.263256788254, Current accuracy = 0.91035169363
-Reverse epoch.
-0 / 51 : Current loss = 0.250686585903, Current accuracy = 0.91484391689310 / 51 : Current loss = 0.233059436083, Current accuracy = 0.92050796747220 / 51 : Current loss = 0.236637204885, Current accuracy = 0.91953140497230 / 51 : Current loss = 0.26603397727, Current accuracy = 0.90917986631440 / 51 : Current loss = 0.260837107897, Current accuracy = 0.90449237823550 / 51 : Current loss = 0.232540637255, Current accuracy = 0.918359518051
-
-[[  326    60    37    29   422]
- [   32   175    11    74   342]
- [   34    17   314   165   500]
- [   28    37   107   854  1200]
- [  100    73   220   596 19847]]
-Tag: BDSE - P 0.6269 / R 0.3730 / F1 0.4677
-Tag: IDSE - P 0.4834 / R 0.2760 / F1 0.3514
-Tag: BESE - P 0.4557 / R 0.3049 / F1 0.3653
-Tag: IESE - P 0.4971 / R 0.3836 / F1 0.4331
-Tag: O - P 0.8896 / R 0.9525 / F1 0.9200
-Validation Loss = 0.538842, Validation Accuracy = 0.84047
-Epoch number: 25
-0 / 51 : Current loss = 0.208536922932, Current accuracy = 0.93066418170910 / 51 : Current loss = 0.224170774221, Current accuracy = 0.9240235686320 / 51 : Current loss = 0.237405106425, Current accuracy = 0.9171876311330 / 51 : Current loss = 0.282571226358, Current accuracy = 0.89667987823540 / 51 : Current loss = 0.263118952513, Current accuracy = 0.90429699420950 / 51 : Current loss = 0.244062036276, Current accuracy = 0.915429830551
-Reverse epoch.
-0 / 51 : Current loss = 0.239405781031, Current accuracy = 0.91796892881410 / 51 : Current loss = 0.234271064401, Current accuracy = 0.91582041978820 / 51 : Current loss = 0.237833127379, Current accuracy = 0.91464865207730 / 51 : Current loss = 0.246929317713, Current accuracy = 0.9162110686340 / 51 : Current loss = 0.25244641304, Current accuracy = 0.90722668170950 / 51 : Current loss = 0.218656793237, Current accuracy = 0.920703291893
-
-[[  344    61    38    37   394]
- [   36   198    11    74   315]
- [   30    15   284   173   528]
- [   28    51    96   916  1135]
- [  107    95   178   736 19720]]
-Tag: BDSE - P 0.6312 / R 0.3936 / F1 0.4848
-Tag: IDSE - P 0.4714 / R 0.3123 / F1 0.3757
-Tag: BESE - P 0.4679 / R 0.2757 / F1 0.3470
-Tag: IESE - P 0.4731 / R 0.4115 / F1 0.4402
-Tag: O - P 0.8926 / R 0.9464 / F1 0.9187
-Validation Loss = 0.548177, Validation Accuracy = 0.83836
-Epoch number: 26
-0 / 51 : Current loss = 0.193311467767, Current accuracy = 0.93417990207710 / 51 : Current loss = 0.220315694809, Current accuracy = 0.92617201805120 / 51 : Current loss = 0.225807592273, Current accuracy = 0.92128926515630 / 51 : Current loss = 0.271055907011, Current accuracy = 0.90039074420940 / 51 : Current loss = 0.252918571234, Current accuracy = 0.90605485439350 / 51 : Current loss = 0.236838698387, Current accuracy = 0.920507967472
-Reverse epoch.
-0 / 51 : Current loss = 0.231320142746, Current accuracy = 0.92128914594710 / 51 : Current loss = 0.238221660256, Current accuracy = 0.91113299131420 / 51 : Current loss = 0.232360064983, Current accuracy = 0.92011737823530 / 51 : Current loss = 0.254762351513, Current accuracy = 0.91054701805140 / 51 : Current loss = 0.251786261797, Current accuracy = 0.90546882152650 / 51 : Current loss = 0.203172564507, Current accuracy = 0.930078268051
-
-[[  344    60    39    34   397]
- [   37   186     7    88   316]
- [   33    15   290   185   507]
- [   31    44    89   927  1135]
- [  107    87   200   764 19678]]
-Tag: BDSE - P 0.6232 / R 0.3936 / F1 0.4825
-Tag: IDSE - P 0.4745 / R 0.2934 / F1 0.3626
-Tag: BESE - P 0.4640 / R 0.2816 / F1 0.3505
-Tag: IESE - P 0.4640 / R 0.4164 / F1 0.4389
-Tag: O - P 0.8931 / R 0.9444 / F1 0.9181
-Validation Loss = 0.563646, Validation Accuracy = 0.83691
-Epoch number: 27
-0 / 51 : Current loss = 0.179334923625, Current accuracy = 0.94121110439310 / 51 : Current loss = 0.205725982785, Current accuracy = 0.92792987823520 / 51 : Current loss = 0.223930120468, Current accuracy = 0.91796886920930 / 51 : Current loss = 0.273209124804, Current accuracy = 0.89902359247240 / 51 : Current loss = 0.255313813686, Current accuracy = 0.90585952997250 / 51 : Current loss = 0.231401994824, Current accuracy = 0.920898556709
-Reverse epoch.
-0 / 51 : Current loss = 0.221427604556, Current accuracy = 0.92578142881410 / 51 : Current loss = 0.228477239609, Current accuracy = 0.91718757152620 / 51 : Current loss = 0.260441124439, Current accuracy = 0.9083985686330 / 51 : Current loss = 0.285545557737, Current accuracy = 0.90253925323540 / 51 : Current loss = 0.257806092501, Current accuracy = 0.90585952997250 / 51 : Current loss = 0.210022196174, Current accuracy = 0.924218893051
-
-[[  331    67    44    34   398]
- [   26   199    11    71   327]
- [   28    14   323   166   499]
- [   24    32   108   925  1137]
- [  103    81   262   716 19674]]
-Tag: BDSE - P 0.6465 / R 0.3787 / F1 0.4776
-Tag: IDSE - P 0.5064 / R 0.3139 / F1 0.3875
-Tag: BESE - P 0.4318 / R 0.3136 / F1 0.3633
-Tag: IESE - P 0.4838 / R 0.4155 / F1 0.4471
-Tag: O - P 0.8929 / R 0.9442 / F1 0.9178
-Validation Loss = 0.549776, Validation Accuracy = 0.83797
-Epoch number: 28
-0 / 51 : Current loss = 0.185890257359, Current accuracy = 0.93789082765610 / 51 : Current loss = 0.210155293345, Current accuracy = 0.92656266689320 / 51 : Current loss = 0.231876790524, Current accuracy = 0.92089861631430 / 51 : Current loss = 0.279067993164, Current accuracy = 0.90000021457740 / 51 : Current loss = 0.259182006121, Current accuracy = 0.90683603286750 / 51 : Current loss = 0.244421213865, Current accuracy = 0.910351634026
-Reverse epoch.
-0 / 51 : Current loss = 0.224881693721, Current accuracy = 0.92128914594710 / 51 : Current loss = 0.220104247332, Current accuracy = 0.92265635728820 / 51 : Current loss = 0.252742916346, Current accuracy = 0.91367208957730 / 51 : Current loss = 0.248311027884, Current accuracy = 0.9152345061340 / 51 : Current loss = 0.267527133226, Current accuracy = 0.90429705381450 / 51 : Current loss = 0.227845877409, Current accuracy = 0.919726729393
-
-[[  396    83    40    44   311]
- [   30   243    16    81   264]
- [   43    21   348   182   436]
- [   35    68   121   984  1018]
- [  154   166   303   930 19283]]
-Tag: BDSE - P 0.6018 / R 0.4531 / F1 0.5170
-Tag: IDSE - P 0.4182 / R 0.3833 / F1 0.4000
-Tag: BESE - P 0.4203 / R 0.3379 / F1 0.3746
-Tag: IESE - P 0.4430 / R 0.4420 / F1 0.4425
-Tag: O - P 0.9048 / R 0.9255 / F1 0.9150
-Validation Loss = 0.556035, Validation Accuracy = 0.83023
-Epoch number: 29
-0 / 51 : Current loss = 0.184845209122, Current accuracy = 0.93515634536710 / 51 : Current loss = 0.206167176366, Current accuracy = 0.92656266689320 / 51 : Current loss = 0.20399568975, Current accuracy = 0.93085956573530 / 51 : Current loss = 0.238840162754, Current accuracy = 0.91679710149840 / 51 : Current loss = 0.223681822419, Current accuracy = 0.92031264305150 / 51 : Current loss = 0.237412154675, Current accuracy = 0.917968809605
-Reverse epoch.
-0 / 51 : Current loss = 0.218476623297, Current accuracy = 0.92558610439310 / 51 : Current loss = 0.211300209165, Current accuracy = 0.92421895265620 / 51 : Current loss = 0.229532852769, Current accuracy = 0.9201173186330 / 51 : Current loss = 0.226345837116, Current accuracy = 0.92265635728840 / 51 : Current loss = 0.231260925531, Current accuracy = 0.91640639305150 / 51 : Current loss = 0.206968009472, Current accuracy = 0.923242330551
-
-[[  423    73    47    52   279]
- [   40   238    12   107   237]
- [   50    19   340   202   419]
- [   42    79   139  1038   928]
- [  211   202   340  1093 18990]]
-Tag: BDSE - P 0.5522 / R 0.4840 / F1 0.5159
-Tag: IDSE - P 0.3895 / R 0.3754 / F1 0.3823
-Tag: BESE - P 0.3872 / R 0.3301 / F1 0.3564
-Tag: IESE - P 0.4165 / R 0.4663 / F1 0.4400
-Tag: O - P 0.9107 / R 0.9114 / F1 0.9110
-Validation Loss = 0.595546, Validation Accuracy = 0.82145
-Epoch number: 30
-0 / 51 : Current loss = 0.177344933152, Current accuracy = 0.94238299131410 / 51 : Current loss = 0.190956428647, Current accuracy = 0.93144541978820 / 51 : Current loss = 0.202146694064, Current accuracy = 0.92812514305130 / 51 : Current loss = 0.226154178381, Current accuracy = 0.92070323228840 / 51 : Current loss = 0.220980748534, Current accuracy = 0.92031258344750 / 51 : Current loss = 0.213486298919, Current accuracy = 0.927539288998
-Reverse epoch.
-0 / 51 : Current loss = 0.200359970331, Current accuracy = 0.93320327997210 / 51 : Current loss = 0.206093862653, Current accuracy = 0.92382830381420 / 51 : Current loss = 0.216890349984, Current accuracy = 0.92441427707730 / 51 : Current loss = 0.209722563624, Current accuracy = 0.92460954189340 / 51 : Current loss = 0.215416103601, Current accuracy = 0.92265641689350 / 51 : Current loss = 0.188545614481, Current accuracy = 0.934961080551
-
-[[  411    81    42    57   283]
- [   40   256    12    95   231]
- [   53    24   333   208   412]
- [   43    85   134  1060   904]
- [  204   219   321  1162 18930]]
-Tag: BDSE - P 0.5473 / R 0.4703 / F1 0.5058
-Tag: IDSE - P 0.3850 / R 0.4038 / F1 0.3941
-Tag: BESE - P 0.3955 / R 0.3233 / F1 0.3558
-Tag: IESE - P 0.4105 / R 0.4762 / F1 0.4409
-Tag: O - P 0.9118 / R 0.9085 / F1 0.9102
-Validation Loss = 0.619309, Validation Accuracy = 0.81992
-Epoch number: 31
-0 / 51 : Current loss = 0.167715847492, Current accuracy = 0.94394546747210 / 51 : Current loss = 0.186900421977, Current accuracy = 0.93457043170920 / 51 : Current loss = 0.19709020853, Current accuracy = 0.93417984247230 / 51 : Current loss = 0.210289984941, Current accuracy = 0.92773449420940 / 51 : Current loss = 0.216263234615, Current accuracy = 0.92148452997250 / 51 : Current loss = 0.206222981215, Current accuracy = 0.926757991314
-Reverse epoch.
-0 / 51 : Current loss = 0.199358612299, Current accuracy = 0.93085956573510 / 51 : Current loss = 0.189943790436, Current accuracy = 0.93437510728820 / 51 : Current loss = 0.212913498282, Current accuracy = 0.93027365207730 / 51 : Current loss = 0.205595582724, Current accuracy = 0.93222677707740 / 51 : Current loss = 0.208064213395, Current accuracy = 0.92460954189350 / 51 : Current loss = 0.180958986282, Current accuracy = 0.937890708447
-
-[[  425    76    47    58   268]
- [   42   238    19    86   249]
- [   48    26   352   224   380]
- [   32    76   131  1081   906]
- [  194   188   362  1164 18928]]
-Tag: BDSE - P 0.5735 / R 0.4863 / F1 0.5263
-Tag: IDSE - P 0.3940 / R 0.3754 / F1 0.3845
-Tag: BESE - P 0.3864 / R 0.3417 / F1 0.3627
-Tag: IESE - P 0.4137 / R 0.4856 / F1 0.4468
-Tag: O - P 0.9130 / R 0.9084 / F1 0.9107
-Validation Loss = 0.625727, Validation Accuracy = 0.82125
-Epoch number: 32
-0 / 51 : Current loss = 0.159477263689, Current accuracy = 0.94667983055110 / 51 : Current loss = 0.193393498659, Current accuracy = 0.92949229478820 / 51 : Current loss = 0.191325485706, Current accuracy = 0.93515634536730 / 51 : Current loss = 0.213979586959, Current accuracy = 0.9230470061340 / 51 : Current loss = 0.216378673911, Current accuracy = 0.92246109247250 / 51 : Current loss = 0.195244953036, Current accuracy = 0.934375166893
-Reverse epoch.
-0 / 51 : Current loss = 0.189313128591, Current accuracy = 0.93593764305110 / 51 : Current loss = 0.185794875026, Current accuracy = 0.93339860439320 / 51 : Current loss = 0.198694229126, Current accuracy = 0.93164074420930 / 51 : Current loss = 0.195156529546, Current accuracy = 0.93046891689340 / 51 : Current loss = 0.206588581204, Current accuracy = 0.92363291978850 / 51 : Current loss = 0.176542729139, Current accuracy = 0.940820455551
-
-[[  445    76    41    56   256]
- [   44   234    19   120   217]
- [   55    19   364   226   366]
- [   48    83   145  1118   832]
- [  243   195   413  1290 18695]]
-Tag: BDSE - P 0.5329 / R 0.5092 / F1 0.5208
-Tag: IDSE - P 0.3855 / R 0.3691 / F1 0.3771
-Tag: BESE - P 0.3707 / R 0.3534 / F1 0.3618
-Tag: IESE - P 0.3979 / R 0.5022 / F1 0.4440
-Tag: O - P 0.9180 / R 0.8972 / F1 0.9075
-Validation Loss = 0.645295, Validation Accuracy = 0.81469
-Epoch number: 33
-0 / 51 : Current loss = 0.158731639385, Current accuracy = 0.94882833957710 / 51 : Current loss = 0.192177444696, Current accuracy = 0.93457049131420 / 51 : Current loss = 0.18822388351, Current accuracy = 0.93730485439330 / 51 : Current loss = 0.216090559959, Current accuracy = 0.92382824420940 / 51 : Current loss = 0.212581902742, Current accuracy = 0.92519539594750 / 51 : Current loss = 0.196076124907, Current accuracy = 0.934765815735
-Reverse epoch.
-0 / 51 : Current loss = 0.185592636466, Current accuracy = 0.93906265497210 / 51 : Current loss = 0.186164304614, Current accuracy = 0.93359392881420 / 51 : Current loss = 0.194596126676, Current accuracy = 0.93671894073530 / 51 : Current loss = 0.190157234669, Current accuracy = 0.93437522649840 / 51 : Current loss = 0.224217951298, Current accuracy = 0.91484385728850 / 51 : Current loss = 0.166169703007, Current accuracy = 0.94453138113
-
-[[  451    81    49    47   246]
- [   45   234    18   109   228]
- [   57    22   352   227   372]
- [   49    78   155  1095   849]
- [  267   226   371  1269 18703]]
-Tag: BDSE - P 0.5190 / R 0.5160 / F1 0.5175
-Tag: IDSE - P 0.3651 / R 0.3691 / F1 0.3671
-Tag: BESE - P 0.3725 / R 0.3417 / F1 0.3565
-Tag: IESE - P 0.3986 / R 0.4919 / F1 0.4404
-Tag: O - P 0.9169 / R 0.8976 / F1 0.9072
-Validation Loss = 0.656170, Validation Accuracy = 0.81387
-Epoch number: 34
-0 / 51 : Current loss = 0.152677282691, Current accuracy = 0.95019543170910 / 51 : Current loss = 0.21347951889, Current accuracy = 0.92324239015620 / 51 : Current loss = 0.190213263035, Current accuracy = 0.93261736631430 / 51 : Current loss = 0.210957467556, Current accuracy = 0.9240235686340 / 51 : Current loss = 0.205224275589, Current accuracy = 0.92187517881450 / 51 : Current loss = 0.201324909925, Current accuracy = 0.925195515156
-Reverse epoch.
-0 / 51 : Current loss = 0.189839884639, Current accuracy = 0.93320333957710 / 51 : Current loss = 0.187178373337, Current accuracy = 0.93613302707720 / 51 : Current loss = 0.203281894326, Current accuracy = 0.93144547939330 / 51 : Current loss = 0.195577412844, Current accuracy = 0.93105483055140 / 51 : Current loss = 0.239179700613, Current accuracy = 0.91210949420950 / 51 : Current loss = 0.178535401821, Current accuracy = 0.939453244209
-
-[[  469    70    48    42   245]
- [   54   234    18    91   237]
- [   62    25   323   217   403]
- [   55   107   137  1044   883]
- [  280   229   363  1223 18741]]
-Tag: BDSE - P 0.5098 / R 0.5366 / F1 0.5229
-Tag: IDSE - P 0.3519 / R 0.3691 / F1 0.3603
-Tag: BESE - P 0.3633 / R 0.3136 / F1 0.3366
-Tag: IESE - P 0.3989 / R 0.4690 / F1 0.4311
-Tag: O - P 0.9138 / R 0.8995 / F1 0.9066
-Validation Loss = 0.643527, Validation Accuracy = 0.81293
-Epoch number: 35
-0 / 51 : Current loss = 0.15718048811, Current accuracy = 0.94570332765610 / 51 : Current loss = 0.219816699624, Current accuracy = 0.92421889305120 / 51 : Current loss = 0.18873898685, Current accuracy = 0.92988300323530 / 51 : Current loss = 0.239337772131, Current accuracy = 0.91308605670940 / 51 : Current loss = 0.217756465077, Current accuracy = 0.92441415786750 / 51 : Current loss = 0.206980720162, Current accuracy = 0.925390839577
-Reverse epoch.
-0 / 51 : Current loss = 0.200728550553, Current accuracy = 0.92968755960510 / 51 : Current loss = 0.21050067246, Current accuracy = 0.92441421747220 / 51 : Current loss = 0.203271925449, Current accuracy = 0.9269532561330 / 51 : Current loss = 0.198833793402, Current accuracy = 0.92949235439340 / 51 : Current loss = 0.242026939988, Current accuracy = 0.91386735439350 / 51 : Current loss = 0.190846830606, Current accuracy = 0.934570431709
-
-[[  440    73    35    30   296]
- [   47   247    17    77   246]
- [   63    22   332   178   435]
- [   53   106   143   975   949]
- [  224   217   304   916 19175]]
-Tag: BDSE - P 0.5320 / R 0.5034 / F1 0.5173
-Tag: IDSE - P 0.3714 / R 0.3896 / F1 0.3803
-Tag: BESE - P 0.3995 / R 0.3223 / F1 0.3568
-Tag: IESE - P 0.4481 / R 0.4380 / F1 0.4430
-Tag: O - P 0.9087 / R 0.9203 / F1 0.9145
-Validation Loss = 0.610663, Validation Accuracy = 0.82691
-Epoch number: 36
-0 / 51 : Current loss = 0.15661251545, Current accuracy = 0.94785177707710 / 51 : Current loss = 0.234832853079, Current accuracy = 0.91542983055120 / 51 : Current loss = 0.194385454059, Current accuracy = 0.93320322036730 / 51 : Current loss = 0.224406689405, Current accuracy = 0.92402362823540 / 51 : Current loss = 0.247550904751, Current accuracy = 0.90761733055150 / 51 : Current loss = 0.206117793918, Current accuracy = 0.926757931709
-Reverse epoch.
-0 / 51 : Current loss = 0.206419050694, Current accuracy = 0.92558604478810 / 51 : Current loss = 0.205715581775, Current accuracy = 0.92988300323520 / 51 : Current loss = 0.20503115654, Current accuracy = 0.92753922939330 / 51 : Current loss = 0.200966820121, Current accuracy = 0.92773449420940 / 51 : Current loss = 0.202484101057, Current accuracy = 0.92968761920950 / 51 : Current loss = 0.181797236204, Current accuracy = 0.934961080551
-
-[[  419    79    34    26   316]
- [   50   251    11    70   252]
- [   58    29   284   153   506]
- [   46    98   141   840  1101]
- [  190   219   256   721 19450]]
-Tag: BDSE - P 0.5491 / R 0.4794 / F1 0.5119
-Tag: IDSE - P 0.3713 / R 0.3959 / F1 0.3832
-Tag: BESE - P 0.3912 / R 0.2757 / F1 0.3235
-Tag: IESE - P 0.4641 / R 0.3774 / F1 0.4163
-Tag: O - P 0.8994 / R 0.9335 / F1 0.9161
-Validation Loss = 0.613488, Validation Accuracy = 0.82984
-Epoch number: 37
-0 / 51 : Current loss = 0.14869569242, Current accuracy = 0.95058608055110 / 51 : Current loss = 0.206092253327, Current accuracy = 0.92519545555120 / 51 : Current loss = 0.195652827621, Current accuracy = 0.93437516689330 / 51 : Current loss = 0.207944959402, Current accuracy = 0.92910170555140 / 51 : Current loss = 0.247620016336, Current accuracy = 0.90761739015650 / 51 : Current loss = 0.18851596117, Current accuracy = 0.935156464577
-Reverse epoch.
-0 / 51 : Current loss = 0.193257674575, Current accuracy = 0.9318360686310 / 51 : Current loss = 0.220715716481, Current accuracy = 0.92089855670920 / 51 : Current loss = 0.206433176994, Current accuracy = 0.92753928899830 / 51 : Current loss = 0.203173726797, Current accuracy = 0.93027365207740 / 51 : Current loss = 0.192694634199, Current accuracy = 0.93066424131450 / 51 : Current loss = 0.177198156714, Current accuracy = 0.935156464577
-
-[[  409    73    30    28   334]
- [   46   234    15    62   277]
- [   47    23   279   158   523]
- [   50    93   127   786  1170]
- [  168   200   223   677 19568]]
-Tag: BDSE - P 0.5681 / R 0.4680 / F1 0.5132
-Tag: IDSE - P 0.3756 / R 0.3691 / F1 0.3723
-Tag: BESE - P 0.4139 / R 0.2709 / F1 0.3275
-Tag: IESE - P 0.4594 / R 0.3531 / F1 0.3993
-Tag: O - P 0.8947 / R 0.9391 / F1 0.9164
-Validation Loss = 0.636168, Validation Accuracy = 0.83109
-Epoch number: 38
-0 / 51 : Current loss = 0.14800080657, Current accuracy = 0.94687521457710 / 51 : Current loss = 0.178207591176, Current accuracy = 0.93183612823520 / 51 : Current loss = 0.179013043642, Current accuracy = 0.94316422939330 / 51 : Current loss = 0.194019034505, Current accuracy = 0.93339860439340 / 51 : Current loss = 0.224787279963, Current accuracy = 0.91855484247250 / 51 : Current loss = 0.18659748137, Current accuracy = 0.935351729393
-Reverse epoch.
-0 / 51 : Current loss = 0.179224967957, Current accuracy = 0.93789076805110 / 51 : Current loss = 0.199400603771, Current accuracy = 0.93046885728820 / 51 : Current loss = 0.178728803992, Current accuracy = 0.94121104478830 / 51 : Current loss = 0.174253985286, Current accuracy = 0.93750011920940 / 51 : Current loss = 0.18520988524, Current accuracy = 0.93710952997250 / 51 : Current loss = 0.162922456861, Current accuracy = 0.944336116314
-
-[[  375    78    25    29   367]
- [   51   218    15    60   290]
- [   50    24   267   160   529]
- [   45    83   127   812  1159]
- [  137   188   228   672 19611]]
-Tag: BDSE - P 0.5699 / R 0.4291 / F1 0.4896
-Tag: IDSE - P 0.3689 / R 0.3438 / F1 0.3559
-Tag: BESE - P 0.4033 / R 0.2592 / F1 0.3156
-Tag: IESE - P 0.4686 / R 0.3648 / F1 0.4102
-Tag: O - P 0.8932 / R 0.9412 / F1 0.9166
-Validation Loss = 0.643820, Validation Accuracy = 0.83137
-Epoch number: 39
-0 / 51 : Current loss = 0.13924497366, Current accuracy = 0.95585948228810 / 51 : Current loss = 0.155228704214, Current accuracy = 0.94335955381420 / 51 : Current loss = 0.17353156209, Current accuracy = 0.9416016936330 / 51 : Current loss = 0.171339705586, Current accuracy = 0.94335949420940 / 51 : Current loss = 0.197613447905, Current accuracy = 0.92500019073550 / 51 : Current loss = 0.16816842556, Current accuracy = 0.942578315735
-Reverse epoch.
-0 / 51 : Current loss = 0.171083375812, Current accuracy = 0.94218760728810 / 51 : Current loss = 0.189778551459, Current accuracy = 0.92656272649820 / 51 : Current loss = 0.172549054027, Current accuracy = 0.94199228286730 / 51 : Current loss = 0.174589633942, Current accuracy = 0.93906265497240 / 51 : Current loss = 0.169736504555, Current accuracy = 0.94140642881450 / 51 : Current loss = 0.15440377593, Current accuracy = 0.946679770947
-
-[[  384    73    35    29   353]
- [   42   231    15    64   282]
- [   45    20   283   156   526]
- [   46    79   150   799  1152]
- [  146   202   237   657 19594]]
-Tag: BDSE - P 0.5792 / R 0.4394 / F1 0.4997
-Tag: IDSE - P 0.3818 / R 0.3644 / F1 0.3729
-Tag: BESE - P 0.3931 / R 0.2748 / F1 0.3234
-Tag: IESE - P 0.4686 / R 0.3589 / F1 0.4065
-Tag: O - P 0.8944 / R 0.9404 / F1 0.9168
-Validation Loss = 0.661381, Validation Accuracy = 0.83168
-Epoch number: 40
-0 / 51 : Current loss = 0.131797835231, Current accuracy = 0.95683598518410 / 51 : Current loss = 0.14608515799, Current accuracy = 0.94746112823520 / 51 : Current loss = 0.159517347813, Current accuracy = 0.94609397649830 / 51 : Current loss = 0.162978649139, Current accuracy = 0.94687509536740 / 51 : Current loss = 0.182337284088, Current accuracy = 0.93222671747250 / 51 : Current loss = 0.169166952372, Current accuracy = 0.941992342472
-Reverse epoch.
-0 / 51 : Current loss = 0.1622761935, Current accuracy = 0.9484376311310 / 51 : Current loss = 0.165199801326, Current accuracy = 0.94316422939320 / 51 : Current loss = 0.160301744938, Current accuracy = 0.94492197036730 / 51 : Current loss = 0.160861298442, Current accuracy = 0.94531267881440 / 51 : Current loss = 0.158359631896, Current accuracy = 0.94609391689350 / 51 : Current loss = 0.142742082477, Current accuracy = 0.951172053814
-
-[[  359    75    38    33   369]
- [   47   216    18    64   289]
- [   47    23   276   157   527]
- [   38    83   137   814  1154]
- [  159   184   252   666 19575]]
-Tag: BDSE - P 0.5523 / R 0.4108 / F1 0.4711
-Tag: IDSE - P 0.3718 / R 0.3407 / F1 0.3556
-Tag: BESE - P 0.3828 / R 0.2680 / F1 0.3152
-Tag: IESE - P 0.4694 / R 0.3657 / F1 0.4111
-Tag: O - P 0.8933 / R 0.9395 / F1 0.9158
-Validation Loss = 0.686584, Validation Accuracy = 0.82969
-Epoch number: 41
-0 / 51 : Current loss = 0.119150459766, Current accuracy = 0.95976579189310 / 51 : Current loss = 0.137128829956, Current accuracy = 0.95058608055120 / 51 : Current loss = 0.153945565224, Current accuracy = 0.94453144073530 / 51 : Current loss = 0.156845122576, Current accuracy = 0.94804698228840 / 51 : Current loss = 0.1662042588, Current accuracy = 0.94062519073550 / 51 : Current loss = 0.154582038522, Current accuracy = 0.948047041893
-Reverse epoch.
-0 / 51 : Current loss = 0.156294345856, Current accuracy = 0.94921886920910 / 51 : Current loss = 0.155390232801, Current accuracy = 0.9474610686320 / 51 : Current loss = 0.156408786774, Current accuracy = 0.94628924131430 / 51 : Current loss = 0.166431352496, Current accuracy = 0.94140636920940 / 51 : Current loss = 0.165637969971, Current accuracy = 0.94316416978850 / 51 : Current loss = 0.135775566101, Current accuracy = 0.954297065735
-
-[[  376    82    26    26   364]
- [   51   229    17    60   277]
- [   54    25   263   159   529]
- [   43    88   145   784  1166]
- [  175   185   247   676 19553]]
-Tag: BDSE - P 0.5379 / R 0.4302 / F1 0.4781
-Tag: IDSE - P 0.3760 / R 0.3612 / F1 0.3685
-Tag: BESE - P 0.3768 / R 0.2553 / F1 0.3044
-Tag: IESE - P 0.4598 / R 0.3522 / F1 0.3989
-Tag: O - P 0.8933 / R 0.9384 / F1 0.9153
-Validation Loss = 0.722482, Validation Accuracy = 0.82832
-Epoch number: 42
-0 / 51 : Current loss = 0.110797971487, Current accuracy = 0.9632815122610 / 51 : Current loss = 0.124301224947, Current accuracy = 0.95507830381420 / 51 : Current loss = 0.146502733231, Current accuracy = 0.95117205381430 / 51 : Current loss = 0.153448969126, Current accuracy = 0.94804704189340 / 51 : Current loss = 0.156784966588, Current accuracy = 0.94414079189350 / 51 : Current loss = 0.14144693315, Current accuracy = 0.94941419363
-Reverse epoch.
-0 / 51 : Current loss = 0.141378164291, Current accuracy = 0.95136737823510 / 51 : Current loss = 0.150903359056, Current accuracy = 0.94863295555120 / 51 : Current loss = 0.153534844518, Current accuracy = 0.94609385728830 / 51 : Current loss = 0.160570308566, Current accuracy = 0.94667983055140 / 51 : Current loss = 0.148730948567, Current accuracy = 0.95117199420950 / 51 : Current loss = 0.130772948265, Current accuracy = 0.956054866314
-
-[[  380    73    36    23   362]
- [   47   226    15    56   290]
- [   53    25   287   161   504]
- [   46    97   153   851  1079]
- [  177   171   256   686 19546]]
-Tag: BDSE - P 0.5405 / R 0.4348 / F1 0.4819
-Tag: IDSE - P 0.3818 / R 0.3565 / F1 0.3687
-Tag: BESE - P 0.3842 / R 0.2786 / F1 0.3230
-Tag: IESE - P 0.4789 / R 0.3823 / F1 0.4252
-Tag: O - P 0.8974 / R 0.9381 / F1 0.9173
-Validation Loss = 0.735084, Validation Accuracy = 0.83164
-Epoch number: 43
-0 / 51 : Current loss = 0.103787250817, Current accuracy = 0.96699225902610 / 51 : Current loss = 0.127109751105, Current accuracy = 0.95644545555120 / 51 : Current loss = 0.146034404635, Current accuracy = 0.95117205381430 / 51 : Current loss = 0.142830938101, Current accuracy = 0.95332050323540 / 51 : Current loss = 0.146944388747, Current accuracy = 0.94960957765650 / 51 : Current loss = 0.13621635735, Current accuracy = 0.953906416893
-Reverse epoch.
-0 / 51 : Current loss = 0.138453319669, Current accuracy = 0.95468765497210 / 51 : Current loss = 0.135964915156, Current accuracy = 0.9552735686320 / 51 : Current loss = 0.150156751275, Current accuracy = 0.95058608055130 / 51 : Current loss = 0.147890463471, Current accuracy = 0.95000010728840 / 51 : Current loss = 0.152377158403, Current accuracy = 0.94375020265650 / 51 : Current loss = 0.133384034038, Current accuracy = 0.955078303814
-
-[[  375    79    31    27   362]
- [   52   232    10    51   289]
- [   56    26   284   167   497]
- [   45    92   136   823  1130]
- [  181   186   263   709 19497]]
-Tag: BDSE - P 0.5289 / R 0.4291 / F1 0.4738
-Tag: IDSE - P 0.3772 / R 0.3659 / F1 0.3715
-Tag: BESE - P 0.3923 / R 0.2757 / F1 0.3238
-Tag: IESE - P 0.4631 / R 0.3697 / F1 0.4112
-Tag: O - P 0.8954 / R 0.9357 / F1 0.9151
-Validation Loss = 0.753272, Validation Accuracy = 0.82855
-Epoch number: 44
-0 / 51 : Current loss = 0.104621164501, Current accuracy = 0.96542984247210 / 51 : Current loss = 0.131729215384, Current accuracy = 0.95371103286720 / 51 : Current loss = 0.137471273541, Current accuracy = 0.95312511920930 / 51 : Current loss = 0.144841820002, Current accuracy = 0.95058608055140 / 51 : Current loss = 0.143407598138, Current accuracy = 0.94960951805150 / 51 : Current loss = 0.144310995936, Current accuracy = 0.95039075613
-Reverse epoch.
-0 / 51 : Current loss = 0.143062055111, Current accuracy = 0.95117199420910 / 51 : Current loss = 0.142373383045, Current accuracy = 0.9503907561320 / 51 : Current loss = 0.152959570289, Current accuracy = 0.94589853286730 / 51 : Current loss = 0.141784071922, Current accuracy = 0.94941425323540 / 51 : Current loss = 0.143318429589, Current accuracy = 0.95078134536750 / 51 : Current loss = 0.118242152035, Current accuracy = 0.961328268051
-
-[[  381    84    32    28   349]
- [   50   242     9    57   276]
- [   56    27   285   152   510]
- [   43   104   143   805  1131]
- [  169   238   256   676 19497]]
-Tag: BDSE - P 0.5451 / R 0.4359 / F1 0.4844
-Tag: IDSE - P 0.3482 / R 0.3817 / F1 0.3642
-Tag: BESE - P 0.3931 / R 0.2767 / F1 0.3248
-Tag: IESE - P 0.4686 / R 0.3616 / F1 0.4082
-Tag: O - P 0.8959 / R 0.9357 / F1 0.9154
-Validation Loss = 0.765569, Validation Accuracy = 0.82852
-Epoch number: 45
-0 / 51 : Current loss = 0.0969721525908, Current accuracy = 0.96972668170910 / 51 : Current loss = 0.116947129369, Current accuracy = 0.95898449420920 / 51 : Current loss = 0.130603417754, Current accuracy = 0.95449233055130 / 51 : Current loss = 0.132598593831, Current accuracy = 0.95292985439340 / 51 : Current loss = 0.140636220574, Current accuracy = 0.94941425323550 / 51 : Current loss = 0.138706967235, Current accuracy = 0.950976729393
-Reverse epoch.
-0 / 51 : Current loss = 0.135712444782, Current accuracy = 0.95351576805110 / 51 : Current loss = 0.132517486811, Current accuracy = 0.95410168170920 / 51 : Current loss = 0.147570714355, Current accuracy = 0.94726574420930 / 51 : Current loss = 0.129983007908, Current accuracy = 0.95742201805140 / 51 : Current loss = 0.128149479628, Current accuracy = 0.9582032561350 / 51 : Current loss = 0.124910160899, Current accuracy = 0.956640839577
-
-[[  400    83    27    23   341]
- [   55   246    12    48   273]
- [   63    25   291   144   507]
- [   53   110   167   733  1163]
- [  192   255   255   597 19537]]
-Tag: BDSE - P 0.5242 / R 0.4577 / F1 0.4887
-Tag: IDSE - P 0.3421 / R 0.3880 / F1 0.3636
-Tag: BESE - P 0.3870 / R 0.2825 / F1 0.3266
-Tag: IESE - P 0.4744 / R 0.3293 / F1 0.3888
-Tag: O - P 0.8953 / R 0.9377 / F1 0.9160
-Validation Loss = 0.784620, Validation Accuracy = 0.82840
-Epoch number: 46
-0 / 51 : Current loss = 0.103249944746, Current accuracy = 0.96777355670910 / 51 : Current loss = 0.116424076259, Current accuracy = 0.95742207765620 / 51 : Current loss = 0.13103736937, Current accuracy = 0.95312511920930 / 51 : Current loss = 0.132041215897, Current accuracy = 0.95722675323540 / 51 : Current loss = 0.140000641346, Current accuracy = 0.95000016689350 / 51 : Current loss = 0.130031958222, Current accuracy = 0.953906416893
-Reverse epoch.
-0 / 51 : Current loss = 0.130173876882, Current accuracy = 0.95390647649810 / 51 : Current loss = 0.136714816093, Current accuracy = 0.95332050323520 / 51 : Current loss = 0.138351976871, Current accuracy = 0.95566427707730 / 51 : Current loss = 0.141401514411, Current accuracy = 0.94902360439340 / 51 : Current loss = 0.144411250949, Current accuracy = 0.95078140497250 / 51 : Current loss = 0.125967994332, Current accuracy = 0.958007931709
-
-[[  369    80    32    26   367]
- [   51   225    16    56   286]
- [   54    21   278   144   533]
- [   49    95   146   789  1147]
- [  173   196   254   674 19539]]
-Tag: BDSE - P 0.5302 / R 0.4222 / F1 0.4701
-Tag: IDSE - P 0.3647 / R 0.3549 / F1 0.3597
-Tag: BESE - P 0.3829 / R 0.2699 / F1 0.3166
-Tag: IESE - P 0.4671 / R 0.3544 / F1 0.4031
-Tag: O - P 0.8933 / R 0.9378 / F1 0.9150
-Validation Loss = 0.783084, Validation Accuracy = 0.82813
-Epoch number: 47
-0 / 51 : Current loss = 0.0987381786108, Current accuracy = 0.9679688811310 / 51 : Current loss = 0.117976009846, Current accuracy = 0.95449233055120 / 51 : Current loss = 0.133712753654, Current accuracy = 0.95449233055130 / 51 : Current loss = 0.128047987819, Current accuracy = 0.95917987823540 / 51 : Current loss = 0.146334409714, Current accuracy = 0.94609385728850 / 51 : Current loss = 0.135189473629, Current accuracy = 0.952929854393
-Reverse epoch.
-0 / 51 : Current loss = 0.132932305336, Current accuracy = 0.95488291978810 / 51 : Current loss = 0.133910596371, Current accuracy = 0.95175796747220 / 51 : Current loss = 0.139484137297, Current accuracy = 0.95449233055130 / 51 : Current loss = 0.131567567587, Current accuracy = 0.95195323228840 / 51 : Current loss = 0.134681895375, Current accuracy = 0.95058608055150 / 51 : Current loss = 0.115641877055, Current accuracy = 0.961133003235
-
-[[  400    88    30    30   326]
- [   50   248    17    51   268]
- [   60    28   299   138   505]
- [   49   102   141   753  1181]
- [  192   253   269   627 19495]]
-Tag: BDSE - P 0.5326 / R 0.4577 / F1 0.4923
-Tag: IDSE - P 0.3449 / R 0.3912 / F1 0.3666
-Tag: BESE - P 0.3955 / R 0.2903 / F1 0.3348
-Tag: IESE - P 0.4709 / R 0.3383 / F1 0.3937
-Tag: O - P 0.8953 / R 0.9356 / F1 0.9150
-Validation Loss = 0.795331, Validation Accuracy = 0.82793
-Epoch number: 48
-0 / 51 : Current loss = 0.0882656276226, Current accuracy = 0.97343754768410 / 51 : Current loss = 0.118326462805, Current accuracy = 0.95859396457720 / 51 : Current loss = 0.130368813872, Current accuracy = 0.95410168170930 / 51 : Current loss = 0.121815398335, Current accuracy = 0.95800793170940 / 51 : Current loss = 0.13415209949, Current accuracy = 0.95292985439350 / 51 : Current loss = 0.129294380546, Current accuracy = 0.955859482288
-Reverse epoch.
-0 / 51 : Current loss = 0.12435939908, Current accuracy = 0.9572266936310 / 51 : Current loss = 0.143698841333, Current accuracy = 0.95019549131420 / 51 : Current loss = 0.13189291954, Current accuracy = 0.95410174131430 / 51 : Current loss = 0.136207044125, Current accuracy = 0.95273452997240 / 51 : Current loss = 0.129000291228, Current accuracy = 0.95566421747250 / 51 : Current loss = 0.115429006517, Current accuracy = 0.962109565735
-
-[[  399    89    33    25   328]
- [   52   238    16    50   278]
- [   62    27   302   127   512]
- [   54   106   159   757  1150]
- [  197   239   285   651 19464]]
-Tag: BDSE - P 0.5223 / R 0.4565 / F1 0.4872
-Tag: IDSE - P 0.3405 / R 0.3754 / F1 0.3571
-Tag: BESE - P 0.3799 / R 0.2932 / F1 0.3310
-Tag: IESE - P 0.4702 / R 0.3401 / F1 0.3947
-Tag: O - P 0.8956 / R 0.9342 / F1 0.9145
-Validation Loss = 0.803935, Validation Accuracy = 0.82656
-Epoch number: 49
-0 / 51 : Current loss = 0.0897500663996, Current accuracy = 0.97246110439310 / 51 : Current loss = 0.113817073405, Current accuracy = 0.95683604478820 / 51 : Current loss = 0.126025855541, Current accuracy = 0.9552735686330 / 51 : Current loss = 0.134892612696, Current accuracy = 0.9523438811340 / 51 : Current loss = 0.139738574624, Current accuracy = 0.94863301515650 / 51 : Current loss = 0.124130018055, Current accuracy = 0.959179878235
-Reverse epoch.
-0 / 51 : Current loss = 0.123668253422, Current accuracy = 0.95703136920910 / 51 : Current loss = 0.134794354439, Current accuracy = 0.95371109247220 / 51 : Current loss = 0.152390152216, Current accuracy = 0.94980490207730 / 51 : Current loss = 0.132548496127, Current accuracy = 0.95312511920940 / 51 : Current loss = 0.136768385768, Current accuracy = 0.95234394073550 / 51 : Current loss = 0.129824951291, Current accuracy = 0.955273628235
-
-[[  402    73    30    17   352]
- [   50   227    13    43   301]
- [   55    30   277   128   540]
- [   58   101   137   706  1224]
- [  179   215   235   546 19661]]
-Tag: BDSE - P 0.5403 / R 0.4600 / F1 0.4969
-Tag: IDSE - P 0.3514 / R 0.3580 / F1 0.3547
-Tag: BESE - P 0.4003 / R 0.2689 / F1 0.3217
-Tag: IESE - P 0.4903 / R 0.3172 / F1 0.3852
-Tag: O - P 0.8905 / R 0.9436 / F1 0.9163
-Validation Loss = 0.821231, Validation Accuracy = 0.83098
-Epoch number: 50
-0 / 51 : Current loss = 0.0991896092892, Current accuracy = 0.96464854478810 / 51 : Current loss = 0.109373725951, Current accuracy = 0.96328139305120 / 51 : Current loss = 0.124513536692, Current accuracy = 0.95664077997230 / 51 : Current loss = 0.131506562233, Current accuracy = 0.95332038402640 / 51 : Current loss = 0.137734144926, Current accuracy = 0.94960957765650 / 51 : Current loss = 0.134205028415, Current accuracy = 0.953125119209
-Reverse epoch.
-0 / 51 : Current loss = 0.127026617527, Current accuracy = 0.9562501311310 / 51 : Current loss = 0.149844184518, Current accuracy = 0.94882827997220 / 51 : Current loss = 0.136327117682, Current accuracy = 0.9533204436330 / 51 : Current loss = 0.141563668847, Current accuracy = 0.95292985439340 / 51 : Current loss = 0.122826173902, Current accuracy = 0.95898455381450 / 51 : Current loss = 0.121668249369, Current accuracy = 0.95429700613
-
-[[  378    80    27    19   370]
- [   49   232    12    48   293]
- [   53    35   253   142   547]
- [   55   113   128   710  1220]
- [  173   245   218   599 19601]]
-Tag: BDSE - P 0.5339 / R 0.4325 / F1 0.4779
-Tag: IDSE - P 0.3291 / R 0.3659 / F1 0.3465
-Tag: BESE - P 0.3966 / R 0.2456 / F1 0.3034
-Tag: IESE - P 0.4677 / R 0.3190 / F1 0.3793
-Tag: O - P 0.8897 / R 0.9407 / F1 0.9145
-Validation Loss = 0.811306, Validation Accuracy = 0.82711
-
-[[  5751    533    136    112   2023]
- [   164   5462     18    109    607]
- [   207    164   6216    997   3039]
- [   168    591    610  18771   4311]
- [   907   1050    793   1758 206623]]
-Tag: BDSE - P 0.7991 / R 0.6722 / F1 0.7302
-Tag: IDSE - P 0.7003 / R 0.8588 / F1 0.7715
-Tag: BESE - P 0.7997 / R 0.5851 / F1 0.6758
-Tag: IESE - P 0.8632 / R 0.7677 / F1 0.8126
-Tag: O - P 0.9539 / R 0.9786 / F1 0.9661
-Validation Loss = 0.213081, Validation Accuracy = 0.92993
-
-[[  378    80    27    19   370]
- [   49   232    12    48   293]
- [   53    35   253   142   547]
- [   55   113   128   710  1220]
- [  173   245   218   599 19601]]
-Tag: BDSE - P 0.5339 / R 0.4325 / F1 0.4779
-Tag: IDSE - P 0.3291 / R 0.3659 / F1 0.3465
-Tag: BESE - P 0.3966 / R 0.2456 / F1 0.3034
-Tag: IESE - P 0.4677 / R 0.3190 / F1 0.3793
-Tag: O - P 0.8897 / R 0.9407 / F1 0.9145
-Validation Loss = 0.811306, Validation Accuracy = 0.82711
-
-[[  253    57    21    13   242]
- [   37   153     8    35   159]
- [   28    16   207    93   340]
- [   31    78    70   552   851]
- [  140   158   144   385 16409]]
-Tag: BDSE - P 0.5174 / R 0.4317 / F1 0.4707
-Tag: IDSE - P 0.3312 / R 0.3903 / F1 0.3583
-Tag: BESE - P 0.4600 / R 0.3026 / F1 0.3651
-Tag: IESE - P 0.5121 / R 0.3489 / F1 0.4150
-Tag: O - P 0.9116 / R 0.9520 / F1 0.9314
-Validation Loss = 0.663683, Validation Accuracy = 0.85811
-Optimization Finished!
