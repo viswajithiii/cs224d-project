@@ -13,7 +13,7 @@ it is either at the beginning(B) or the inside (I) of a phrase. So there are
 five classes in total: B_DSE, I_DSE, B_ESE, I_ESE and O.
 """
 
-DEBUG = False
+DEBUG = True
 
 class Config(object):
     """
@@ -27,20 +27,22 @@ class Config(object):
     lr = 0.005
     # training_iters = 100000
     # training_epochs = 200 #Hyperparameter used in paper
-    training_epochs = 200
+    training_epochs = 100
     minibatch_sentence_size = 80  # Hyperparameter used in paper
     batch_size = 64
     display_step = 1
 
     num_input = 300  # Word vector length
-    num_steps = 400  # Number of timesteps.
+    # num_steps = 400  # Number of timesteps.
 
     num_classes = 5  # BDSE, IDSE, BESE, IESE, O -- five classes
 
-    def __init__(self, nlayers, nhidden, nsteps):
+    def __init__(self, nlayers, nhidden, nsteps, input_keep_prob, output_keep_prob):
         self.model_depth = nlayers
         self.num_hidden = nhidden
         self.num_steps = nsteps
+        self.input_keep_prob = input_keep_prob
+        self.output_keep_prob = output_keep_prob
         
 
 classes_to_int_dict = {
@@ -283,10 +285,12 @@ class BiRNN_Classifier:
 
         # Forward direction cell
         single_fw_cell = rnn_cell.BasicLSTMCell(self.config.num_hidden)
+        single_fw_cell = rnn_cell.DropoutWrapper(single_fw_cell, self.config.input_keep_prob, self.config.output_keep_prob, 0.8)
         rnn_fw_cell = rnn_cell.MultiRNNCell(
             [single_fw_cell]*self.config.model_depth)
         # Backward direction cell
         single_bw_cell = rnn_cell.BasicLSTMCell(self.config.num_hidden)
+        single_bw_cell = rnn_cell.DropoutWrapper(single_bw_cell, self.config.input_keep_prob, self.config.output_keep_prob)
         rnn_bw_cell = rnn_cell.MultiRNNCell(
             [single_bw_cell]*self.config.model_depth)
 
@@ -487,12 +491,12 @@ class BiRNN_Classifier:
         return xes, preds, trues
 
 
-def run_BiRNN(nlayers, nhidden, nsteps):
+def run_BiRNN(nlayers, nhidden, nsteps, input_keep_prob, output_keep_prob):
     """
     Runs the BiRNN on the MPQA dataset.
     """
     # Launch the graph
-    config = Config(nlayers, nhidden, nsteps)
+    config = Config(nlayers, nhidden, nsteps, input_keep_prob, output_keep_prob)
 
     model = BiRNN_Classifier(config, verbose=True)
 
@@ -529,7 +533,8 @@ def run_BiRNN(nlayers, nhidden, nsteps):
 
         for s in ['train', 'dev', 'test']:
             xes, preds, trues = model.calculate_accuracy(sess, s)
-            with open('outputs_%s_LSTM_%d_layers_%d_hidden_%d_steps.txt' % (s, nlayers, nhidden, nsteps), 'w') as out_f:
+            with open('outputs_%s_LSTM_%d_layers_%d_hidden_%d_steps_%f_ipDO_%f_opDO.txt' % 
+                (s, nlayers, nhidden, nsteps, input_keep_prob, output_keep_prob), 'w') as out_f:
                 for i in range(len(xes)):
                     out_f.write(model.vocab.decode(xes[i]) + '\t' +
                                 int_to_classes_dict[preds[i]] +
@@ -541,10 +546,15 @@ if __name__ == "__main__":
     nlayers = 2 
     nhidden = 50
     nsteps = 80
+    input_keep_prob = 0.8
+    output_keep_prob = 0.8
     if len(sys.argv) > 1:
         nlayers = int(sys.argv[1])
     if len(sys.argv)>2:        
         nhidden = int(sys.argv[2])
     if len(sys.argv)>3:
         nsteps = int(sys.argv[3])
-    run_BiRNN(nlayers, nhidden, nsteps)
+    if len(sys.argv)>4: 
+        input_keep_prob = float(sys.argv[4])
+        output_keep_prob = float(sys.argv[5])
+    run_BiRNN(nlayers, nhidden, nsteps, input_keep_prob, output_keep_prob)
