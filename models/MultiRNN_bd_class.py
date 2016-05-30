@@ -15,7 +15,6 @@ five classes in total: B_DSE, I_DSE, B_ESE, I_ESE and O.
 
 DEBUG = True 
 
-
 class Config(object):
     """
     Holds model hyperparams and data information.
@@ -28,7 +27,7 @@ class Config(object):
     lr = 0.005
     # training_iters = 100000
     # training_epochs = 200 #Hyperparameter used in paper
-    training_epochs = 100
+    training_epochs = 4
     minibatch_sentence_size = 80  # Hyperparameter used in paper
     batch_size = 16
     display_step = 1
@@ -513,23 +512,24 @@ def run_BiRNN(nlayers, nhidden, nsteps):
             if step % config.display_step == 0:
                 model.calculate_accuracy(sess)
             step += 1
-            if step == config.training_epochs:
-                print 'All epochs done, do you want to do more? (Y/N)'
-                print 'If yes, follow Y with the number of epochs to add.'
-                try:
-                    response = raw_input()
-                    if response[0] == 'Y':
-                        num_steps_to_add = int(response.split()[1])
-                        config.training_epochs += num_steps_to_add
-                        print 'Success. Total epochs set to %d' % (
-                            config.training_epochs)
-                except:
-                    print 'Something went wrong with your input.'
-                    print 'Not training anymore.'
+            
+            #if step == config.training_epochs:
+            #    print 'All epochs done, do you want to do more? (Y/N)'
+            #    print 'If yes, follow Y with the number of epochs to add.'
+            #    try:
+            #        response = raw_input()
+            #        if response[0] == 'Y':
+            #            num_steps_to_add = int(response.split()[1])
+            #            config.training_epochs += num_steps_to_add
+            #            print 'Success. Total epochs set to %d' % (
+            #                config.training_epochs)
+            #    except:
+            #        print 'Something went wrong with your input.'
+            #        print 'Not training anymore.'
 
-        for s in ['train', 'dev']:
+        for s in ['train', 'dev', 'test']:
             xes, preds, trues = model.calculate_accuracy(sess, s)
-            with open('outputs_%s.txt' % s, 'w') as out_f:
+            with open('outputs_%s_LSTM_%d_layers_%d_hidden_%d_steps.txt' % (s, nlayers, nhidden, nsteps), 'w') as out_f:
                 for i in range(len(xes)):
                     out_f.write(model.vocab.decode(xes[i]) + '\t' +
                                 int_to_classes_dict[preds[i]] +
