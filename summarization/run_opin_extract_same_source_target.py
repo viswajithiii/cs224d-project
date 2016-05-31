@@ -62,7 +62,7 @@ tf.app.flags.DEFINE_integer("num_layers", 3, "Number of layers in the model.")
 tf.app.flags.DEFINE_integer("en_vocab_size", 40000, "English vocabulary size.")
 tf.app.flags.DEFINE_integer("fr_vocab_size", 40000, "French vocabulary size.")
 tf.app.flags.DEFINE_string("data_dir", "/tmp", "Data directory")
-tf.app.flags.DEFINE_string("train_dir", "tmp_samesourcetarget_3layers/", "Training directory.")
+tf.app.flags.DEFINE_string("train_dir", "tmp_samesourcetarget/", "Training directory.")
 tf.app.flags.DEFINE_integer("max_train_data_size", 0,
                             "Limit on the size of training data (0: no limit).")
 tf.app.flags.DEFINE_integer("steps_per_checkpoint", 5,
@@ -71,6 +71,10 @@ tf.app.flags.DEFINE_boolean("decode", False,
                             "Set to True for interactive decoding.")
 tf.app.flags.DEFINE_boolean("self_test", False,
                             "Run a self-test if this is set to True.")
+tf.app.flags.DEFINE_boolean("use_train_labels", False,
+                            "If this is True, train on the train labels, not \
+                            the same source")
+
 
 FLAGS = tf.app.flags.FLAGS
 
@@ -82,6 +86,9 @@ _buckets = [(90, 90),
             (300, 300)]
 
 #_buckets = _buckets[:1]
+save_dir = os.path.join(FLAGS.train_dir, "same_st_num_layers_%d_dropout_%f" %(FLAGS.num_layers, FLAGS.dropout_prob))
+summary_dir = os.path.join(FLAGS.train_dir + "seq2seq_logs", "same_st_num_layers_%d_dropout_%f" %(FLAGS.num_layers, FLAGS.dropout_prob))
+
 
 
 def read_data(file_path, vocab):
@@ -112,8 +119,10 @@ def read_data(file_path, vocab):
         sys.stdout.flush()
       sp_line = line.strip().split('\t')
       source_ids = [vocab.encode(x) for x in sp_line[0].split()]
-      target_ids = source_ids
-      #target_ids = [vocab.encode(x) for x in sp_line[1].split()]
+      if FLAGS.use_train_labels:
+        target_ids = [vocab.encode(x) for x in sp_line[1].split()]
+      else:
+        target_ids = source_ids
       # print (len(source_ids), len(target_ids))
       target_ids.append(data_utils.EOS_ID)
       for bucket_id, (source_size, target_size) in enumerate(_buckets):
@@ -132,7 +141,7 @@ def create_model(session, forward_only, vocab=None, embedding_matrix=None):
       FLAGS.learning_rate, FLAGS.learning_rate_decay_factor,
       forward_only=forward_only, use_lstm=True,
       embedding_matrix=embedding_matrix, dropout_prob=FLAGS.dropout_prob)
-  ckpt = tf.train.get_checkpoint_state(FLAGS.train_dir)
+  ckpt = tf.train.get_checkpoint_state(save_dir)
   if ckpt and tf.gfile.Exists(ckpt.model_checkpoint_path):
     print("Reading model parameters from %s" % ckpt.model_checkpoint_path)
     model.saver.restore(session, ckpt.model_checkpoint_path)
@@ -169,12 +178,13 @@ def train():
                            for i in xrange(len(train_bucket_sizes))]
 
 
-    writer = tf.train.SummaryWriter("tmp/seq2seq_logs")
+    writer = tf.train.SummaryWriter(summary_dir)
     # This is the training loop.
     step_time, loss = 0.0, 0.0
     current_step = 0
     previous_losses = []
     steps_per_val_eval = 20
+    best_ppx = float("inf")
     while True:
       # Choose a bucket according to data distribution. We pick a random number
       # in [0, 1] and use the corresponding interval in train_buckets_scale.
@@ -201,6 +211,12 @@ def train():
         print ("global step %d learning rate %.4f step-time %.2f perplexity "
                "%.2f" % (model.global_step.eval(), model.learning_rate.eval(),
                          step_time, perplexity))
+        with open("same_st_num_layers_%d_dropout_%f.log" %
+                  (FLAGS.num_layers, FLAGS.dropout_prob), 'a') as log_f:
+          log_f.write("global step %d learning rate %.4f step-time %.2f perplexity %.2f\n"
+                      % (model.global_step.eval(), model.learning_rate.eval(),
+                         step_time, perplexity))
+
         # Decrease learning rate if no improvement was seen over last 3 times.
         if len(previous_losses) > 2 and loss > max(previous_losses[-3:]):
           sess.run(model.learning_rate_decay_op)
@@ -237,8 +253,15 @@ def train():
             eval_ppx = math.exp(eval_loss) if eval_loss < 300 else float('inf')
             print("  eval: bucket %d perplexity %.2f" % (bucket_id, eval_ppx))
             ppx_total += len(dev_set[bucket_id])*eval_ppx
-          print ("Mean eval perplexity by example: %.2f" % (
-              ppx_total/sum([len(dev_set[i]) for i in range(len(_buckets))])))
+          avg_ppx = ppx_total/sum([len(dev_set[i]) for i in range(len(_buckets))])
+          print ("Mean eval perplexity by example: %.2f" % (avg_ppx))
+          with open("same_st_num_layers_%d_dropout_%f.log" %
+                  (FLAGS.num_layers, FLAGS.dropout_prob), 'a') as log_f:
+            log_f.write("Mean eval ppx by example: %.2f\n" % (avg_ppx))
+          if avg_ppx < best_ppx:
+            best_ppx = avg_ppx
+            checkpoint_path = os.path.join(save_dir, "translate_best.ckpt")
+            model.saver.save(sess, checkpoint_path, global_step=model.global_step)
           # sys.stdout.flush()
 
 
