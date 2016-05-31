@@ -62,7 +62,7 @@ tf.app.flags.DEFINE_integer("num_layers", 3, "Number of layers in the model.")
 tf.app.flags.DEFINE_integer("en_vocab_size", 40000, "English vocabulary size.")
 tf.app.flags.DEFINE_integer("fr_vocab_size", 40000, "French vocabulary size.")
 tf.app.flags.DEFINE_string("data_dir", "/tmp", "Data directory")
-tf.app.flags.DEFINE_string("train_dir", "tmp/", "Training directory.")
+tf.app.flags.DEFINE_string("train_dir", "tmp_bestonly/", "Training directory.")
 tf.app.flags.DEFINE_integer("max_train_data_size", 0,
                             "Limit on the size of training data (0: no limit).")
 tf.app.flags.DEFINE_integer("steps_per_checkpoint", 5,
@@ -73,6 +73,15 @@ tf.app.flags.DEFINE_boolean("self_test", False,
                             "Run a self-test if this is set to True.")
 
 FLAGS = tf.app.flags.FLAGS
+
+save_dir = os.path.join(FLAGS.train_dir, "num_layers_%d_dropout_%f" %(FLAGS.num_layers, FLAGS.dropout_prob))
+summary_dir = os.path.join(FLAGS.train_dir + "seq2seq_logs", "num_layers_%d_dropout_%f" %(FLAGS.num_layers, FLAGS.dropout_prob))
+
+if not os.path.exists(save_dir):
+    os.makedirs(save_dir)
+if not os.path.exists(summary_dir):
+    os.makedirs(summary_dir)
+
 
 # We use a number of buckets and pad to the closest one for efficiency.
 # See seq2seq_model.Seq2SeqModel for details of how they work.
@@ -130,7 +139,7 @@ def create_model(session, forward_only, vocab=None, embedding_matrix=None):
       FLAGS.learning_rate, FLAGS.learning_rate_decay_factor,
       forward_only=forward_only, use_lstm=True,
       embedding_matrix=embedding_matrix, dropout_prob=FLAGS.dropout_prob)
-  ckpt = tf.train.get_checkpoint_state(FLAGS.train_dir)
+  ckpt = tf.train.get_checkpoint_state(save_dir)
   if ckpt and tf.gfile.Exists(ckpt.model_checkpoint_path):
     print("Reading model parameters from %s" % ckpt.model_checkpoint_path)
     model.saver.restore(session, ckpt.model_checkpoint_path)
@@ -168,12 +177,13 @@ def train():
                            for i in xrange(len(train_bucket_sizes))]
 
 
-    writer = tf.train.SummaryWriter("tmp/seq2seq_logs")
+    writer = tf.train.SummaryWriter(summary_dir)
     # This is the training loop.
     step_time, loss = 0.0, 0.0
     current_step = 0
     previous_losses = []
     steps_per_val_eval = 20
+    best_ppx = float("inf")
     while True:
       # Choose a bucket according to data distribution. We pick a random number
       # in [0, 1] and use the corresponding interval in train_buckets_scale.
@@ -192,6 +202,7 @@ def train():
       loss += step_loss / FLAGS.steps_per_checkpoint
       current_step += 1
       writer.add_summary(summ, global_step=model.global_step.eval())
+     
 
       # Once in a while, we save checkpoint, print statistics, and run evals.
       if current_step % FLAGS.steps_per_checkpoint == 0:
@@ -208,8 +219,6 @@ def train():
         step_time, loss = 0.0, 0.0
         # Run evals on development set and print their perplexity.
         if current_step % steps_per_val_eval == 0:
-          checkpoint_path = os.path.join(FLAGS.train_dir, "translate.ckpt")
-          model.saver.save(sess, checkpoint_path, global_step=model.global_step)
           ppx_total = 0.0
           for bucket_id in xrange(len(_buckets)):
             if len(dev_set[bucket_id]) == 0:
@@ -236,8 +245,13 @@ def train():
             eval_ppx = math.exp(eval_loss) if eval_loss < 300 else float('inf')
             print("  eval: bucket %d perplexity %.2f" % (bucket_id, eval_ppx))
             ppx_total += len(dev_set[bucket_id])*eval_ppx
-          print ("Mean eval perplexity by example: %.2f" % (
-              ppx_total/sum([len(dev_set[i]) for i in range(len(_buckets))])))
+          avg_ppx = ppx_total/sum([len(dev_set[i]) for i in range(len(_buckets))])
+          print ("Mean eval perplexity by example: %.2f" % (avg_ppx))
+          if avg_ppx < best_ppx:
+            best_ppx = avg_ppx
+            checkpoint_path = os.path.join(save_dir, "translate.ckpt")
+            model.saver.save(sess, checkpoint_path, global_step=model.global_step)
+
           # sys.stdout.flush()
 
 
