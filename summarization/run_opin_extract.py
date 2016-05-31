@@ -65,7 +65,7 @@ tf.app.flags.DEFINE_string("data_dir", "/tmp", "Data directory")
 tf.app.flags.DEFINE_string("train_dir", "tmp_bestonly/", "Training directory.")
 tf.app.flags.DEFINE_integer("max_train_data_size", 0,
                             "Limit on the size of training data (0: no limit).")
-tf.app.flags.DEFINE_integer("steps_per_checkpoint", 5,
+tf.app.flags.DEFINE_integer("steps_per_checkpoint", 1,
                             "How many training steps to do per checkpoint.")
 tf.app.flags.DEFINE_boolean("decode", False,
                             "Set to True for interactive decoding.")
@@ -202,7 +202,7 @@ def train():
       loss += step_loss / FLAGS.steps_per_checkpoint
       current_step += 1
       writer.add_summary(summ, global_step=model.global_step.eval())
-     
+
 
       # Once in a while, we save checkpoint, print statistics, and run evals.
       if current_step % FLAGS.steps_per_checkpoint == 0:
@@ -211,6 +211,12 @@ def train():
         print ("global step %d learning rate %.4f step-time %.2f perplexity "
                "%.2f" % (model.global_step.eval(), model.learning_rate.eval(),
                          step_time, perplexity))
+        with open("num_layers_%d_dropout_%f.log" %
+                  (FLAGS.num_layers, FLAGS.dropout_prob), 'a') as log_f:
+          log_f.write("global step %d learning rate %.4f step-time %.2f perplexity\n"
+               "%.2f" % (model.global_step.eval(), model.learning_rate.eval(),
+                         step_time, perplexity))
+
         # Decrease learning rate if no improvement was seen over last 3 times.
         if len(previous_losses) > 2 and loss > max(previous_losses[-3:]):
           sess.run(model.learning_rate_decay_op)
@@ -244,9 +250,17 @@ def train():
 
             eval_ppx = math.exp(eval_loss) if eval_loss < 300 else float('inf')
             print("  eval: bucket %d perplexity %.2f" % (bucket_id, eval_ppx))
+            with open("num_layers_%d_dropout_%f.log" %
+                  (FLAGS.num_layers, FLAGS.dropout_prob), 'a') as log_f:
+              log_f.write("  eval: bucket %d perplexity %.2f\n" % (bucket_id, eval_ppx))
+
+
             ppx_total += len(dev_set[bucket_id])*eval_ppx
           avg_ppx = ppx_total/sum([len(dev_set[i]) for i in range(len(_buckets))])
           print ("Mean eval perplexity by example: %.2f" % (avg_ppx))
+          with open("num_layers_%d_dropout_%f.log" %
+                  (FLAGS.num_layers, FLAGS.dropout_prob), 'a') as log_f:
+            log_f.write("Mean eval ppx by example: %.2f" % (avg_ppx))
           if avg_ppx < best_ppx:
             best_ppx = avg_ppx
             checkpoint_path = os.path.join(save_dir, "translate.ckpt")
