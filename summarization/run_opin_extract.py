@@ -213,8 +213,8 @@ def train():
                          step_time, perplexity))
         with open("num_layers_%d_dropout_%f.log" %
                   (FLAGS.num_layers, FLAGS.dropout_prob), 'a') as log_f:
-          log_f.write("global step %d learning rate %.4f step-time %.2f perplexity\n"
-               "%.2f" % (model.global_step.eval(), model.learning_rate.eval(),
+          log_f.write("global step %d learning rate %.4f step-time %.2f perplexity %.2f\n"
+                      % (model.global_step.eval(), model.learning_rate.eval(),
                          step_time, perplexity))
 
         # Decrease learning rate if no improvement was seen over last 3 times.
