@@ -260,7 +260,7 @@ def train():
           print ("Mean eval perplexity by example: %.2f" % (avg_ppx))
           with open("num_layers_%d_dropout_%f.log" %
                   (FLAGS.num_layers, FLAGS.dropout_prob), 'a') as log_f:
-            log_f.write("Mean eval ppx by example: %.2f" % (avg_ppx))
+            log_f.write("Mean eval ppx by example: %.2f\n" % (avg_ppx))
           if avg_ppx < best_ppx:
             best_ppx = avg_ppx
             checkpoint_path = os.path.join(save_dir, "translate.ckpt")

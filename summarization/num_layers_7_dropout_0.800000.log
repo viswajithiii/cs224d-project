@@ -1,0 +1,332 @@
+global step 1 learning rate 0.0010 step-time 209.57 perplexity 5454.23
+global step 2 learning rate 0.0010 step-time 118.01 perplexity 4428.75
+global step 3 learning rate 0.0010 step-time 133.45 perplexity 2747.45
+global step 4 learning rate 0.0010 step-time 310.18 perplexity 3432.04
+global step 5 learning rate 0.0010 step-time 166.89 perplexity 1418.82
+global step 6 learning rate 0.0010 step-time 273.51 perplexity 1123.98
+global step 7 learning rate 0.0010 step-time 91.54 perplexity 955.05
+global step 8 learning rate 0.0010 step-time 60.76 perplexity 518.51
+global step 9 learning rate 0.0010 step-time 120.76 perplexity 579.89
+global step 10 learning rate 0.0010 step-time 113.08 perplexity 408.18
+global step 11 learning rate 0.0010 step-time 155.37 perplexity 498.74
+global step 12 learning rate 0.0010 step-time 170.57 perplexity 1041.20
+global step 13 learning rate 0.0010 step-time 163.38 perplexity 506.02
+global step 14 learning rate 0.0010 step-time 93.86 perplexity 473.73
+global step 15 learning rate 0.0010 step-time 116.74 perplexity 312.33
+global step 16 learning rate 0.0010 step-time 170.88 perplexity 769.56
+global step 17 learning rate 0.0010 step-time 180.39 perplexity 289.15
+global step 18 learning rate 0.0010 step-time 180.29 perplexity 254.81
+global step 19 learning rate 0.0010 step-time 122.58 perplexity 225.81
+global step 20 learning rate 0.0010 step-time 95.14 perplexity 253.70
+  eval: bucket 0 perplexity 423.17
+  eval: bucket 1 perplexity 319.03
+  eval: bucket 2 perplexity 483.10
+  eval: bucket 3 perplexity 273.04
+  eval: bucket 4 perplexity 390.57
+  eval: bucket 5 perplexity 367.08
+Mean eval ppx by example: 353.15global step 21 learning rate 0.0010 step-time 178.49 perplexity 315.68
+global step 22 learning rate 0.0010 step-time 101.82 perplexity 179.64
+global step 23 learning rate 0.0010 step-time 105.02 perplexity 164.32
+global step 24 learning rate 0.0010 step-time 152.73 perplexity 168.73
+global step 25 learning rate 0.0010 step-time 118.13 perplexity 121.63
+global step 26 learning rate 0.0010 step-time 195.92 perplexity 238.13
+global step 27 learning rate 0.0010 step-time 61.47 perplexity 136.19
+global step 28 learning rate 0.0010 step-time 178.37 perplexity 155.25
+global step 29 learning rate 0.0010 step-time 122.13 perplexity 109.83
+global step 30 learning rate 0.0010 step-time 198.72 perplexity 274.86
+global step 31 learning rate 0.0010 step-time 121.50 perplexity 114.05
+global step 32 learning rate 0.0010 step-time 199.82 perplexity 192.69
+global step 33 learning rate 0.0010 step-time 95.86 perplexity 165.46
+global step 34 learning rate 0.0010 step-time 180.71 perplexity 113.86
+global step 35 learning rate 0.0010 step-time 173.42 perplexity 102.11
+global step 36 learning rate 0.0010 step-time 92.38 perplexity 153.44
+global step 37 learning rate 0.0010 step-time 189.70 perplexity 181.39
+global step 38 learning rate 0.0009 step-time 95.43 perplexity 152.40
+global step 39 learning rate 0.0009 step-time 90.62 perplexity 105.64
+global step 40 learning rate 0.0009 step-time 95.24 perplexity 126.23
+  eval: bucket 0 perplexity 266.07
+  eval: bucket 1 perplexity 263.82
+  eval: bucket 2 perplexity 257.04
+  eval: bucket 3 perplexity 199.12
+  eval: bucket 4 perplexity 274.83
+  eval: bucket 5 perplexity 224.85
+Mean eval ppx by example: 244.43global step 41 learning rate 0.0009 step-time 200.00 perplexity 156.78
+global step 42 learning rate 0.0009 step-time 121.41 perplexity 92.74
+global step 43 learning rate 0.0009 step-time 122.40 perplexity 86.20
+global step 44 learning rate 0.0009 step-time 170.33 perplexity 101.60
+global step 45 learning rate 0.0009 step-time 119.35 perplexity 91.35
+global step 46 learning rate 0.0009 step-time 59.13 perplexity 104.14
+global step 47 learning rate 0.0009 step-time 100.15 perplexity 241.23
+global step 48 learning rate 0.0009 step-time 112.79 perplexity 72.94
+global step 49 learning rate 0.0009 step-time 111.55 perplexity 70.16
+global step 50 learning rate 0.0009 step-time 185.57 perplexity 137.68
+global step 51 learning rate 0.0009 step-time 91.44 perplexity 97.63
+global step 52 learning rate 0.0009 step-time 85.73 perplexity 99.68
+global step 53 learning rate 0.0009 step-time 113.95 perplexity 71.81
+global step 54 learning rate 0.0009 step-time 162.07 perplexity 83.61
+global step 55 learning rate 0.0009 step-time 95.77 perplexity 184.45
+global step 56 learning rate 0.0009 step-time 119.72 perplexity 67.62
+global step 57 learning rate 0.0009 step-time 103.08 perplexity 182.05
+global step 58 learning rate 0.0009 step-time 116.97 perplexity 68.12
+global step 59 learning rate 0.0009 step-time 184.33 perplexity 136.83
+global step 60 learning rate 0.0009 step-time 167.28 perplexity 83.69
+  eval: bucket 0 perplexity 225.10
+  eval: bucket 1 perplexity 321.30
+  eval: bucket 2 perplexity 187.05
+  eval: bucket 3 perplexity 257.07
+  eval: bucket 4 perplexity 321.59
+  eval: bucket 5 perplexity 244.76
+Mean eval ppx by example: 275.30global step 61 learning rate 0.0009 step-time 116.69 perplexity 78.48
+global step 62 learning rate 0.0009 step-time 115.02 perplexity 72.84
+global step 63 learning rate 0.0009 step-time 59.40 perplexity 65.11
+global step 64 learning rate 0.0009 step-time 189.24 perplexity 146.82
+global step 65 learning rate 0.0009 step-time 168.42 perplexity 63.15
+global step 66 learning rate 0.0009 step-time 57.99 perplexity 63.28
+global step 67 learning rate 0.0009 step-time 60.91 perplexity 59.46
+global step 68 learning rate 0.0009 step-time 174.73 perplexity 76.10
+global step 69 learning rate 0.0009 step-time 115.93 perplexity 59.21
+global step 70 learning rate 0.0009 step-time 193.14 perplexity 139.54
+global step 71 learning rate 0.0009 step-time 168.58 perplexity 68.08
+global step 72 learning rate 0.0009 step-time 178.69 perplexity 72.28
+global step 73 learning rate 0.0009 step-time 121.05 perplexity 61.58
+global step 74 learning rate 0.0009 step-time 92.50 perplexity 89.82
+global step 75 learning rate 0.0009 step-time 112.23 perplexity 54.68
+global step 76 learning rate 0.0009 step-time 115.73 perplexity 51.37
+global step 77 learning rate 0.0009 step-time 117.27 perplexity 56.75
+global step 78 learning rate 0.0009 step-time 89.49 perplexity 88.18
+global step 79 learning rate 0.0009 step-time 117.11 perplexity 61.06
+global step 80 learning rate 0.0009 step-time 171.76 perplexity 72.71
+  eval: bucket 0 perplexity 253.21
+  eval: bucket 1 perplexity 277.28
+  eval: bucket 2 perplexity 267.66
+  eval: bucket 3 perplexity 218.23
+  eval: bucket 4 perplexity 297.11
+  eval: bucket 5 perplexity 290.95
+Mean eval ppx by example: 270.12global step 81 learning rate 0.0009 step-time 91.50 perplexity 104.42
+global step 82 learning rate 0.0009 step-time 89.05 perplexity 81.18
+global step 83 learning rate 0.0009 step-time 58.22 perplexity 39.91
+global step 84 learning rate 0.0009 step-time 58.48 perplexity 35.34
+global step 85 learning rate 0.0009 step-time 175.39 perplexity 95.23
+global step 86 learning rate 0.0008 step-time 57.08 perplexity 41.75
+global step 87 learning rate 0.0008 step-time 184.60 perplexity 145.66
+global step 88 learning rate 0.0008 step-time 122.78 perplexity 47.59
+global step 89 learning rate 0.0008 step-time 88.07 perplexity 93.88
+global step 90 learning rate 0.0008 step-time 173.13 perplexity 60.52
+global step 91 learning rate 0.0008 step-time 186.28 perplexity 129.24
+global step 92 learning rate 0.0008 step-time 62.20 perplexity 37.88
+global step 93 learning rate 0.0008 step-time 88.61 perplexity 74.28
+global step 94 learning rate 0.0008 step-time 116.90 perplexity 50.72
+global step 95 learning rate 0.0008 step-time 169.88 perplexity 58.30
+global step 96 learning rate 0.0008 step-time 104.43 perplexity 175.55
+global step 97 learning rate 0.0008 step-time 91.21 perplexity 82.40
+global step 98 learning rate 0.0008 step-time 89.98 perplexity 73.13
+global step 99 learning rate 0.0008 step-time 189.89 perplexity 112.65
+global step 100 learning rate 0.0008 step-time 173.08 perplexity 71.12
+  eval: bucket 0 perplexity 286.77
+  eval: bucket 1 perplexity 206.86
+  eval: bucket 2 perplexity 199.60
+  eval: bucket 3 perplexity 210.75
+  eval: bucket 4 perplexity 284.56
+  eval: bucket 5 perplexity 217.72
+Mean eval ppx by example: 225.00global step 101 learning rate 0.0008 step-time 189.61 perplexity 120.98
+global step 102 learning rate 0.0008 step-time 57.51 perplexity 33.06
+global step 103 learning rate 0.0008 step-time 88.96 perplexity 66.34
+global step 104 learning rate 0.0008 step-time 102.65 perplexity 142.41
+global step 105 learning rate 0.0008 step-time 101.70 perplexity 144.65
+global step 106 learning rate 0.0008 step-time 91.87 perplexity 75.78
+global step 107 learning rate 0.0008 step-time 101.50 perplexity 127.14
+global step 108 learning rate 0.0008 step-time 187.89 perplexity 108.35
+global step 109 learning rate 0.0008 step-time 98.87 perplexity 139.87
+global step 110 learning rate 0.0008 step-time 101.84 perplexity 109.53
+global step 111 learning rate 0.0008 step-time 120.53 perplexity 62.15
+global step 112 learning rate 0.0008 step-time 122.16 perplexity 63.56
+global step 113 learning rate 0.0008 step-time 188.94 perplexity 105.60
+global step 114 learning rate 0.0008 step-time 166.23 perplexity 56.18
+global step 115 learning rate 0.0008 step-time 118.76 perplexity 59.16
+global step 116 learning rate 0.0008 step-time 118.66 perplexity 61.65
+global step 117 learning rate 0.0008 step-time 173.66 perplexity 73.00
+global step 118 learning rate 0.0008 step-time 91.21 perplexity 71.28
+global step 119 learning rate 0.0008 step-time 59.65 perplexity 31.64
+global step 120 learning rate 0.0008 step-time 119.27 perplexity 60.43
+  eval: bucket 0 perplexity 273.82
+  eval: bucket 1 perplexity 189.47
+  eval: bucket 2 perplexity 242.50
+  eval: bucket 3 perplexity 189.44
+  eval: bucket 4 perplexity 281.91
+  eval: bucket 5 perplexity 231.59
+Mean eval ppx by example: 222.28global step 121 learning rate 0.0008 step-time 89.16 perplexity 66.49
+global step 122 learning rate 0.0008 step-time 91.69 perplexity 71.77
+global step 123 learning rate 0.0008 step-time 119.53 perplexity 61.75
+global step 124 learning rate 0.0008 step-time 186.28 perplexity 122.92
+global step 125 learning rate 0.0008 step-time 114.35 perplexity 46.42
+global step 126 learning rate 0.0008 step-time 116.65 perplexity 54.87
+global step 127 learning rate 0.0008 step-time 190.29 perplexity 104.51
+global step 128 learning rate 0.0008 step-time 114.74 perplexity 60.08
+global step 129 learning rate 0.0008 step-time 87.71 perplexity 59.75
+global step 130 learning rate 0.0008 step-time 172.66 perplexity 65.32
+global step 131 learning rate 0.0008 step-time 115.79 perplexity 48.14
+global step 132 learning rate 0.0008 step-time 90.89 perplexity 63.00
+global step 133 learning rate 0.0008 step-time 90.93 perplexity 57.68
+global step 134 learning rate 0.0008 step-time 173.93 perplexity 51.50
+global step 135 learning rate 0.0008 step-time 102.78 perplexity 127.95
+global step 136 learning rate 0.0008 step-time 88.55 perplexity 49.71
+global step 137 learning rate 0.0008 step-time 98.06 perplexity 111.26
+global step 138 learning rate 0.0008 step-time 89.61 perplexity 45.54
+global step 139 learning rate 0.0008 step-time 115.75 perplexity 49.66
+global step 140 learning rate 0.0008 step-time 92.52 perplexity 56.07
+  eval: bucket 0 perplexity 454.29
+  eval: bucket 1 perplexity 197.53
+  eval: bucket 2 perplexity 169.44
+  eval: bucket 3 perplexity 201.43
+  eval: bucket 4 perplexity 287.14
+  eval: bucket 5 perplexity 193.97
+Mean eval ppx by example: 219.25global step 141 learning rate 0.0008 step-time 119.35 perplexity 47.38
+global step 142 learning rate 0.0008 step-time 191.88 perplexity 107.00
+global step 143 learning rate 0.0007 step-time 60.60 perplexity 41.17
+global step 144 learning rate 0.0007 step-time 118.28 perplexity 45.72
+global step 145 learning rate 0.0007 step-time 189.63 perplexity 100.20
+global step 146 learning rate 0.0007 step-time 101.83 perplexity 104.77
+global step 147 learning rate 0.0007 step-time 89.50 perplexity 55.18
+global step 148 learning rate 0.0007 step-time 115.68 perplexity 42.68
+global step 149 learning rate 0.0007 step-time 189.49 perplexity 97.43
+global step 150 learning rate 0.0007 step-time 171.07 perplexity 73.12
+global step 151 learning rate 0.0007 step-time 169.02 perplexity 61.69
+global step 152 learning rate 0.0007 step-time 175.24 perplexity 65.89
+global step 153 learning rate 0.0007 step-time 121.14 perplexity 50.05
+global step 154 learning rate 0.0007 step-time 169.67 perplexity 58.80
+global step 155 learning rate 0.0007 step-time 168.04 perplexity 50.51
+global step 156 learning rate 0.0007 step-time 116.58 perplexity 54.75
+global step 157 learning rate 0.0007 step-time 102.25 perplexity 120.47
+global step 158 learning rate 0.0007 step-time 92.04 perplexity 52.87
+global step 159 learning rate 0.0007 step-time 88.99 perplexity 48.64
+global step 160 learning rate 0.0007 step-time 174.44 perplexity 53.45
+  eval: bucket 0 perplexity 282.07
+  eval: bucket 1 perplexity 235.91
+  eval: bucket 2 perplexity 181.60
+  eval: bucket 3 perplexity 215.81
+  eval: bucket 4 perplexity 240.49
+  eval: bucket 5 perplexity 211.05
+Mean eval ppx by example: 223.71global step 161 learning rate 0.0007 step-time 101.65 perplexity 111.09
+global step 162 learning rate 0.0007 step-time 171.13 perplexity 51.00
+global step 163 learning rate 0.0007 step-time 115.36 perplexity 44.66
+global step 164 learning rate 0.0007 step-time 118.53 perplexity 57.04
+global step 165 learning rate 0.0007 step-time 188.88 perplexity 102.94
+global step 166 learning rate 0.0007 step-time 88.81 perplexity 53.40
+global step 167 learning rate 0.0007 step-time 168.94 perplexity 45.75
+global step 168 learning rate 0.0007 step-time 191.51 perplexity 109.89
+global step 169 learning rate 0.0007 step-time 193.57 perplexity 99.54
+global step 170 learning rate 0.0007 step-time 171.35 perplexity 64.59
+global step 171 learning rate 0.0007 step-time 190.84 perplexity 92.98
+global step 172 learning rate 0.0007 step-time 165.90 perplexity 48.06
+global step 173 learning rate 0.0007 step-time 85.95 perplexity 70.82
+global step 174 learning rate 0.0007 step-time 91.15 perplexity 55.34
+global step 175 learning rate 0.0007 step-time 89.28 perplexity 54.26
+global step 176 learning rate 0.0007 step-time 114.81 perplexity 53.46
+global step 177 learning rate 0.0007 step-time 87.10 perplexity 59.49
+global step 178 learning rate 0.0007 step-time 181.48 perplexity 102.01
+global step 179 learning rate 0.0007 step-time 89.22 perplexity 51.96
+global step 180 learning rate 0.0007 step-time 166.40 perplexity 44.37
+  eval: bucket 0 perplexity 260.91
+  eval: bucket 1 perplexity 238.81
+  eval: bucket 2 perplexity 209.73
+  eval: bucket 3 perplexity 229.79
+  eval: bucket 4 perplexity 323.93
+  eval: bucket 5 perplexity 207.28
+Mean eval ppx by example: 242.34global step 181 learning rate 0.0007 step-time 168.75 perplexity 48.48
+global step 182 learning rate 0.0007 step-time 188.78 perplexity 105.24
+global step 183 learning rate 0.0007 step-time 119.08 perplexity 46.86
+global step 184 learning rate 0.0007 step-time 186.16 perplexity 97.92
+global step 185 learning rate 0.0007 step-time 88.62 perplexity 53.42
+global step 186 learning rate 0.0007 step-time 103.08 perplexity 104.59
+global step 187 learning rate 0.0007 step-time 165.86 perplexity 43.65
+global step 188 learning rate 0.0007 step-time 89.51 perplexity 53.42
+global step 189 learning rate 0.0007 step-time 90.19 perplexity 47.06
+global step 190 learning rate 0.0007 step-time 114.80 perplexity 53.76
+global step 191 learning rate 0.0007 step-time 190.55 perplexity 92.15
+global step 192 learning rate 0.0007 step-time 168.44 perplexity 45.64
+global step 193 learning rate 0.0007 step-time 111.86 perplexity 54.81
+global step 194 learning rate 0.0007 step-time 167.67 perplexity 49.58
+global step 195 learning rate 0.0007 step-time 188.47 perplexity 88.47
+global step 196 learning rate 0.0007 step-time 189.47 perplexity 89.73
+global step 197 learning rate 0.0007 step-time 189.16 perplexity 79.43
+global step 198 learning rate 0.0007 step-time 89.50 perplexity 51.29
+global step 199 learning rate 0.0007 step-time 186.53 perplexity 79.03
+global step 200 learning rate 0.0007 step-time 167.07 perplexity 51.16
+  eval: bucket 0 perplexity 275.46
+  eval: bucket 1 perplexity 245.98
+  eval: bucket 2 perplexity 183.52
+  eval: bucket 3 perplexity 324.39
+  eval: bucket 4 perplexity 368.26
+  eval: bucket 5 perplexity 171.62
+Mean eval ppx by example: 260.30global step 201 learning rate 0.0007 step-time 116.70 perplexity 53.81
+global step 202 learning rate 0.0007 step-time 112.54 perplexity 59.50
+global step 203 learning rate 0.0007 step-time 88.26 perplexity 47.62
+global step 204 learning rate 0.0007 step-time 89.07 perplexity 53.70
+global step 205 learning rate 0.0007 step-time 116.60 perplexity 55.97
+global step 206 learning rate 0.0007 step-time 179.59 perplexity 87.29
+global step 207 learning rate 0.0006 step-time 160.82 perplexity 44.47
+global step 208 learning rate 0.0006 step-time 182.54 perplexity 81.59
+global step 209 learning rate 0.0006 step-time 186.12 perplexity 81.10
+global step 210 learning rate 0.0006 step-time 169.08 perplexity 39.80
+global step 211 learning rate 0.0006 step-time 117.02 perplexity 46.74
+global step 212 learning rate 0.0006 step-time 169.72 perplexity 50.20
+global step 213 learning rate 0.0006 step-time 181.44 perplexity 78.40
+global step 214 learning rate 0.0006 step-time 115.58 perplexity 43.93
+global step 215 learning rate 0.0006 step-time 186.13 perplexity 76.59
+global step 216 learning rate 0.0006 step-time 170.56 perplexity 49.74
+global step 217 learning rate 0.0006 step-time 165.80 perplexity 52.34
+global step 218 learning rate 0.0006 step-time 117.09 perplexity 47.21
+global step 219 learning rate 0.0006 step-time 87.76 perplexity 55.70
+global step 220 learning rate 0.0006 step-time 119.21 perplexity 40.75
+  eval: bucket 0 perplexity 211.60
+  eval: bucket 1 perplexity 259.41
+  eval: bucket 2 perplexity 204.80
+  eval: bucket 3 perplexity 242.66
+  eval: bucket 4 perplexity 320.13
+  eval: bucket 5 perplexity 204.64
+Mean eval ppx by example: 247.23global step 221 learning rate 0.0006 step-time 87.95 perplexity 64.42
+global step 222 learning rate 0.0006 step-time 186.54 perplexity 80.97
+global step 223 learning rate 0.0006 step-time 84.97 perplexity 53.15
+global step 224 learning rate 0.0006 step-time 109.79 perplexity 42.69
+global step 225 learning rate 0.0006 step-time 114.06 perplexity 47.48
+global step 226 learning rate 0.0006 step-time 167.33 perplexity 39.11
+global step 227 learning rate 0.0006 step-time 169.63 perplexity 51.54
+global step 228 learning rate 0.0006 step-time 86.35 perplexity 50.27
+global step 229 learning rate 0.0006 step-time 114.77 perplexity 54.31
+global step 230 learning rate 0.0006 step-time 189.00 perplexity 90.23
+global step 231 learning rate 0.0006 step-time 113.99 perplexity 52.49
+global step 232 learning rate 0.0006 step-time 98.84 perplexity 122.77
+global step 233 learning rate 0.0006 step-time 169.79 perplexity 42.53
+global step 234 learning rate 0.0006 step-time 96.99 perplexity 112.68
+global step 235 learning rate 0.0006 step-time 117.15 perplexity 40.18
+global step 236 learning rate 0.0006 step-time 119.68 perplexity 42.20
+global step 237 learning rate 0.0006 step-time 187.90 perplexity 80.54
+global step 238 learning rate 0.0006 step-time 90.64 perplexity 61.91
+global step 239 learning rate 0.0006 step-time 166.50 perplexity 46.91
+global step 240 learning rate 0.0006 step-time 89.22 perplexity 49.45
+  eval: bucket 0 perplexity 264.20
+  eval: bucket 1 perplexity 265.74
+  eval: bucket 2 perplexity 174.23
+  eval: bucket 3 perplexity 296.93
+  eval: bucket 4 perplexity 290.97
+  eval: bucket 5 perplexity 203.08
+Mean eval ppx by example: 253.20global step 241 learning rate 0.0006 step-time 166.57 perplexity 47.12
+global step 242 learning rate 0.0006 step-time 101.08 perplexity 105.73
+global step 243 learning rate 0.0006 step-time 89.68 perplexity 63.05
+global step 244 learning rate 0.0006 step-time 57.83 perplexity 57.18
+global step 245 learning rate 0.0006 step-time 190.54 perplexity 76.64
+global step 246 learning rate 0.0006 step-time 167.71 perplexity 48.82
+global step 247 learning rate 0.0006 step-time 165.66 perplexity 48.34
+global step 248 learning rate 0.0006 step-time 112.43 perplexity 46.01
+global step 249 learning rate 0.0006 step-time 116.46 perplexity 47.60
+global step 250 learning rate 0.0006 step-time 117.58 perplexity 52.29
+global step 251 learning rate 0.0006 step-time 114.41 perplexity 42.71
+global step 252 learning rate 0.0006 step-time 112.81 perplexity 42.79
+global step 253 learning rate 0.0006 step-time 187.17 perplexity 92.34
+global step 254 learning rate 0.0006 step-time 100.25 perplexity 113.14
+global step 255 learning rate 0.0006 step-time 186.68 perplexity 86.83
+global step 256 learning rate 0.0006 step-time 185.93 perplexity 77.59
+global step 257 learning rate 0.0006 step-time 187.47 perplexity 80.27
+global step 258 learning rate 0.0006 step-time 88.40 perplexity 48.83
+global step 259 learning rate 0.0006 step-time 186.87 perplexity 78.41
+global step 260 learning rate 0.0006 step-time 164.43 perplexity 46.76
